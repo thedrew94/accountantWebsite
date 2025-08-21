@@ -165,11 +165,15 @@ header {
 
 .main_nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   height: 60px;
   padding: 0 25px;
   background-color: #222633;
+}
+
+.main_nav_logo {
+  transform: translateY(-5px);
 }
 
 .main_nav ul {
