@@ -1,5 +1,5 @@
 /* IMPORTS */
-@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 /* CUSTOM DEFAULT STYLES VARIABLES */
 :root {
@@ -40,7 +40,7 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: "Tinos", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 400;
   font-style: normal;
   font-optical-sizing: auto;
@@ -136,6 +136,7 @@ img:not([src]) {
   background-color: #585f7a;
   font-size: 2.8rem;
   font-weight: bolder;
+  font-family: "Playfair Display", serif;
 }
 
 .side_nav ul li:last-child {
@@ -316,4 +317,90 @@ header {
   box-shadow: 2px 2px 2px 0px rgba(255, 255, 255, 0.75);
   /* -webkit-box-shadow: 10px 10px 12px -2px rgba(207, 207, 207, 0.75);
   -moz-box-shadow: 10px 10px 12px -2px rgba(207, 207, 207, 0.75); */
+}
+
+.introduction {
+  position: relative;
+  margin: 0 auto;
+  width: 1400px;
+  height: 500px;
+  padding: 15px 35px;
+  display: grid;
+  grid-template-columns: minmax(380px, 300px) 1fr;
+  gap: 50px;
+}
+
+.introduction_bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 65%);
+  background-color: rgb(88, 95, 122);
+}
+
+.introduction_img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(./assets/building.jpg);
+  border-radius: 5px;
+  border: 1px solid rgb(88, 95, 122);
+  transform: translateY(-50px);
+  overflow: hidden;
+}
+
+.introduction_description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 25px 0;
+}
+
+.introduction_description h5 {
+  font-size: 2.8rem;
+  text-shadow: 2px 2px 4px #222633;
+}
+
+.introduction_description_main {
+  display: flex;
+  gap: 15px;
+}
+
+.introduction_description_main span.decor {
+  font-size: 18rem;
+  line-height: 12rem;
+  text-shadow: 2px 2px 4px #222633;
+}
+
+.introduction_description_main h6 {
+  font-size: 1.7rem;
+  text-shadow: 2px 2px 4px #222633;
+}
+
+.text_end {
+  /* display: flex;
+  justify-content: flex-end; */
+  display: block;
+  text-align: center;
+}
+
+.main_title {
+  color: #222633;
+  text-align: center;
+}
+
+.main_title h2 {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.main_title h3 {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 2.2rem;
 }
