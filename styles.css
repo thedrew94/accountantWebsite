@@ -54,6 +54,7 @@ body {
   background-image: url(./assets/bg_noise.png);
   background-position: center;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 button,
@@ -143,6 +144,7 @@ img:not([src]) {
 
 header {
   width: 100%;
+  min-height: 700px;
   height: 100vh;
 }
 
@@ -156,17 +158,25 @@ header {
 }
 
 .main_nav_logo {
-  transform: translateY(-5px);
 }
 
-.main_nav ul {
+.main_nav_ul {
   display: flex;
-  gap: 10px;
+}
+
+.main_nav_li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  border-right: 1px solid #fff;
+  font-size: 1.8rem;
 }
 
 .hero {
   position: relative;
   width: 100%;
+  min-height: calc(700px - 120px);
   height: calc(100vh - 120px);
   background-image: url(./assets/bg.jpg);
   background-size: cover;
@@ -243,6 +253,7 @@ header {
   position: relative;
   z-index: 1;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 40px;
@@ -305,7 +316,7 @@ header {
   position: relative;
   margin: 0 auto;
   width: 1400px;
-  height: 500px;
+  min-height: 500px;
   padding: 15px 35px;
   display: grid;
   grid-template-columns: minmax(380px, 300px) 1fr;
@@ -541,4 +552,83 @@ footer::before {
   height: 100%;
   min-height: 400px; /* Ensures iframe fills the container's height */
   border: 0; /* Removes default iframe border */
+}
+
+@media screen and (max-width: 1250px) {
+  .hero_description {
+    top: 10%;
+    gap: 25px;
+  }
+
+  .hero h2 {
+    font-size: 3.6rem;
+  }
+
+  .hero h3 {
+    font-size: 2.2rem;
+  }
+
+  .btn_default {
+    margin-top: 50px;
+    padding: 10px;
+    font-size: 1.8rem;
+  }
+
+  .brief {
+    gap: 20px;
+  }
+
+  .brief_card {
+    width: 250px;
+    height: 80px;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    transform: translateY(-115px);
+  }
+
+  .brief_card_ball {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brief_card_ball svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .introduction {
+    width: auto;
+    min-height: 550px;
+    margin: 0 10px;
+    grid-template-columns: minmax(310px, 310px) 1fr;
+    gap: 15px;
+  }
+
+  .introduction_description {
+    padding: 25px 50px 25px 0px;
+  }
+
+  .introduction_description_main span.decor {
+    font-size: 14rem;
+    line-height: 10rem;
+  }
+
+  .introduction_description_main h6 {
+    font-size: 1.6rem;
+  }
+
+  .services_ul {
+    padding: 50px 120px;
+  }
+
+  .services_ul li:nth-child(odd) {
+    transform: translateX(-3%);
+  }
+
+  .services_ul li:nth-child(even) {
+    transform: translateX(3%);
+  }
+}
+
+@media screen and (max-width: 767px) {
 }
