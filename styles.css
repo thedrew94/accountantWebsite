@@ -51,25 +51,6 @@ html {
 }
 
 body {
-  min-height: 100dvh;
-  height: 100%;
-  margin: 0;
-  /* background: -webkit-radial-gradient(
-    circle at center,
-    rgb(252, 214, 133) 0%,
-    rgb(254, 212, 131) 25%,
-    rgb(252, 194, 118) 75%,
-    rgb(250, 178, 110) 100%
-  ); */
-  /* background: radial-gradient(circle at center, #fff 0%, #625847 25%, #625847 75%, #625847 100%); */
-  transform: translateZ(0);
-  /* background-image: linear-gradient(rgba(139, 69, 19, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 69, 19, 0.1) 1px, transparent 1px),
-    linear-gradient(rgba(139, 69, 19, 0.2) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(139, 69, 19, 0.2) 2px, transparent 2px);
-  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px; */
-  /* 
-  background-color: #625847; */
   background-image: url(./assets/bg_noise.png);
   background-position: center;
   background-size: cover;
@@ -109,11 +90,12 @@ img:not([src]) {
 }
 
 .side_nav {
-  position: fixed;
-  top: 50%;
-  right: 0;
-  z-index: 2;
-  transform: translateY(-50%);
+  position: fixed; /* Fixed to stay in viewport regardless of scroll */
+  top: 50%; /* Center vertically */
+  right: 0; /* Align to the right edge */
+  transform: translateY(-50%); /* Offset to center vertically */
+  z-index: 2; /* Ensure it stays above other content */
+  padding: 10px; /* Optional: for better appearance */
 }
 
 .side_nav ul {
