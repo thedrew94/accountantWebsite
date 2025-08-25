@@ -9,14 +9,14 @@
     <script defer src="./script.js"></script>
   </head>
   <body>
-    <nav class="side_nav">
+    <!-- <nav class="side_nav">
       <ul>
         <li class="active"><h6>1</h6></li>
         <li><h6>2</h6></li>
         <li><h6>3</h6></li>
         <li><h6>PDM</h6></li>
       </ul>
-    </nav>
+    </nav> -->
     <header>
       <nav class="main_nav">
         <div class="main_nav_logo">
@@ -61,7 +61,7 @@
             Il nostro impegno è garantire soluzioni su misura<br />
             trasformando la complessità in un vantaggio concreto
           </h3>
-          <button class="btn_default">Scopri i nostri servizi</button>
+          <a href="#services" class="btn_default">Scopri i nostri servizi</a>
         </div>
       </div>
     </header>
@@ -119,7 +119,7 @@
           </div>
         </div>
       </div>
-      <div class="main_title">
+      <div class="main_title" id="services">
         <h2>I NOSTRI SERVIZI</h2>
         <h3>Una galassia di servizi costruita a 360° per te</h3>
       </div>
@@ -203,13 +203,25 @@
           maggiore profondità, ottimizzando i beneci per chi si ada a noi.<br /><br />
           Il nostro impegno è garantire soluzioni su misura, trasformando la complessità in un vantaggio concreto.
         </h6>
+        <div class="footer_logo">
+          <img src="./assets/logoBlue.png" alt="" width="500px" />
+        </div>
         <div class="footer_contact">
           <div class="footer_contact_map">
-            <iframe
+            <!-- <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d95041.1562588085!2d12.646265!3d41.89208!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f7ce0595a00f1%3A0x2f676cf9803e6f0!2sVia%20Prenestina%2C%201376%2C%2000132%20Roma%20RM!5e0!3m2!1sit!2sit!4v1702096966765!5m2!1sit!2sit"
               width="100%"
               height="100%"
               allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe> -->
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.2284742604647!2d12.548352976477315!3d41.866430566144004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f620c9bf78e01%3A0x56257c48aeb8a64f!2sVia%20Gaio%20Melisso%2C%2050%2C%2000175%20Roma%20RM!5e0!3m2!1sit!2sit!4v1756124616985!5m2!1sit!2sit"
+              width="100%"
+              height="100%"
+              allowfullscreen="true"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
@@ -221,9 +233,6 @@
             <div>Roma Via Gaio Melisso 50</div>
             <div>www.studiopdm.biz</div>
           </div>
-        </div>
-        <div class="footer_logo">
-          <img src="./assets/logo_tras_gold.png" alt="" width="500px" />
         </div>
       </div>
     </footer>
