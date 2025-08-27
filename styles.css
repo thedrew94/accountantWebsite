@@ -90,6 +90,47 @@ img:not([src]) {
   background-position: center;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .btn_default:hover {
+    color: #222633;
+    border: 1px solid #222633;
+    background-color: #d6d6d6;
+    box-shadow: 2px 2px 2px 0px #222633;
+  }
+
+  .brief_card:hover::before {
+    width: 80%;
+    border: 3px solid rgb(161, 94, 94);
+  }
+
+  .services_ul li:hover::before {
+    width: 50%;
+    border: 3px solid rgb(161, 94, 94);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  /* Styles for .btn_default when pressed on mobile */
+  .btn_default:active {
+    color: #222633;
+    border: 1px solid #222633;
+    background-color: #d6d6d6;
+    box-shadow: 2px 2px 2px 0px #222633;
+  }
+
+  /* Styles for .brief_card pseudo-element when pressed on mobile */
+  .brief_card:active::before {
+    width: 80%;
+    border: 3px solid rgb(161, 94, 94);
+  }
+
+  /* Styles for .services_ul li pseudo-element when pressed on mobile */
+  .services_ul li:active::before {
+    width: 50%;
+    border: 3px solid rgb(161, 94, 94);
+  }
+}
+
 .side_nav {
   position: fixed; /* Fixed to stay in viewport regardless of scroll */
   top: 50%; /* Center vertically */
@@ -248,13 +289,6 @@ header {
   transition: all 0.25s;
 }
 
-.btn_default:hover {
-  color: #222633;
-  border: 1px solid #222633;
-  background-color: #d6d6d6;
-  box-shadow: 2px 2px 2px 0px #222633;
-}
-
 .decor1 {
   position: absolute;
   z-index: 1;
@@ -368,11 +402,6 @@ header {
   border: 3px solid #fff;
   border-radius: 5px;
   transition: all 0.25s;
-}
-
-.brief_card:hover::before {
-  width: 80%;
-  border: 3px solid rgb(161, 94, 94);
 }
 
 .brief_card_ball {
@@ -529,11 +558,6 @@ header {
   border: 3px solid #fff;
   border-radius: 5px;
   transition: all 0.25s;
-}
-
-.services_ul li:hover::before {
-  width: 50%;
-  border: 3px solid rgb(161, 94, 94);
 }
 
 .services_li_numb {
