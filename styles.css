@@ -133,7 +133,7 @@ img:not([src]) {
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (hover: none) {
   /* Styles for .btn_default when pressed on mobile */
   .btn_default:active {
     color: #222633;
@@ -214,6 +214,11 @@ header {
 }
 
 .main_nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -251,7 +256,7 @@ header {
   position: relative;
   width: 100%;
   min-height: calc(700px - 120px);
-  height: calc(100vh - 120px);
+  height: 100%;
   background-image: url(./assets/bg.jpg);
   background-size: cover;
   background-position: bottom;
@@ -279,7 +284,7 @@ header {
 .hero_description {
   position: absolute;
   z-index: 2;
-  top: 5%;
+  top: 15%;
   left: 5%;
   display: flex;
   flex-direction: column;
@@ -546,6 +551,10 @@ header {
   gap: 15px;
 }
 
+.services_ul li {
+  touch-action: manipulation;
+}
+
 .services_ul li:nth-child(odd) {
   position: relative;
   width: 100%;
@@ -556,8 +565,24 @@ header {
   border-radius: 5px;
   background-color: #222633;
   background-image: url(./assets/bg_noise2.png);
-  transform: translateX(-5%);
+  transform: translateX(-35%);
+  opacity: 0;
   box-shadow: 1px 10px 15px 0px rgba(21, 21, 21, 0.25);
+}
+
+.services_ul li:nth-child(odd).appear_in {
+  animation: enterViewLeftDerray 0.75s ease-out forwards;
+}
+
+@keyframes enterViewLeftDerray {
+  from {
+    transform: translateX(-35%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-5%);
+    opacity: 1;
+  }
 }
 
 .services_ul li:nth-child(even) {
@@ -569,8 +594,24 @@ header {
   border: 1px solid #222633;
   border-radius: 5px;
   color: #222633;
-  transform: translateX(5%);
+  transform: translateX(35%);
+  opacity: 0;
   box-shadow: 1px 10px 15px 0px rgba(21, 21, 21, 0.25);
+}
+
+.services_ul li:nth-child(even).appear_in {
+  animation: enterViewRightDerray 0.75s ease-out forwards;
+}
+
+@keyframes enterViewRightDerray {
+  from {
+    transform: translateX(35%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(5%);
+    opacity: 1;
+  }
 }
 
 .services_ul li::before {
@@ -753,7 +794,7 @@ footer::before {
 
 @media screen and (max-width: 1250px) {
   .hero_description {
-    top: 10%;
+    top: 15%;
     gap: 25px;
   }
 
@@ -855,8 +896,8 @@ footer::before {
   header {
     width: 100%;
     min-height: 500px;
-    height: calc(100vh - 60px);
-    max-height: 600px;
+    height: 100vh;
+    /* max-height: 600px; */
   }
 
   .hero {
@@ -866,7 +907,7 @@ footer::before {
 
   .hero_description {
     width: 100%;
-    top: 55px;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
     gap: 20px;
@@ -888,9 +929,16 @@ footer::before {
   }
 
   .brief {
-    margin: 0 50px;
-    padding: 0 0 55px;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 0;
     gap: 30px;
+  }
+
+  .introduction_description_main span.decor {
+    font-size: 10rem;
+    line-height: 8rem;
+    text-shadow: 2px 2px 4px #222633;
   }
 
   .introduction {
@@ -903,6 +951,7 @@ footer::before {
     width: 100%;
     height: 300px;
     transform: unset;
+    box-shadow: 4px 4px 4px 2px #222633;
   }
 
   .introduction_description {
@@ -910,10 +959,11 @@ footer::before {
   }
 
   .brief_card {
-    width: 100%;
+    width: 90%;
     transform: translateY(-0);
     font-size: 2.2rem;
     font-weight: normal;
+    touch-action: manipulation;
   }
 
   .main_title h2 {
@@ -946,6 +996,7 @@ footer::before {
 
   footer {
     padding: 20px;
+    padding-bottom: 150px;
     overflow: hidden;
   }
 
@@ -954,7 +1005,8 @@ footer::before {
   }
 
   .footer_logo img {
-    width: 400px;
+    min-width: 100px;
+    width: 100%;
     max-width: 400px;
   }
 }
