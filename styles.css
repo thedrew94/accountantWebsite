@@ -813,12 +813,13 @@ footer::before {
   }
 
   .brief {
-    gap: 20px;
+    gap: 25px;
+    padding: 0 20px;
   }
 
   .brief_card {
-    width: 250px;
-    height: 80px;
+    width: 275px;
+    height: 100px;
     border-radius: 5px;
     font-size: 1.8rem;
     transform: translateY(-115px);
@@ -929,9 +930,8 @@ footer::before {
   }
 
   .brief {
-    max-width: 450px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 20px;
     gap: 30px;
   }
 
@@ -978,7 +978,7 @@ footer::before {
   }
 
   .services_ul {
-    padding: 30px 20px;
+    padding: 30px 40px;
   }
 
   .services_ul li:nth-child(odd) {
