@@ -622,6 +622,11 @@ header {
   }
 }
 
+#services,
+#job_safety {
+  scroll-margin-top: 100px; /* Offset from the top */
+}
+
 .services_ul li::before {
   content: "";
   position: absolute;
