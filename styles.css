@@ -930,8 +930,8 @@ footer::before {
 
   header {
     width: 100%;
-    min-height: 450px;
-    height: 65vh;
+    min-height: 400px;
+    height: 60vh;
     /* max-height: 600px; */
     /* overflow: hidden; */
   }
@@ -970,9 +970,11 @@ footer::before {
   .brief_mobile {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: #102b40;
-    /* min-height: 50vh; */
+    min-height: 40vh;
+    height: 40vh;
     padding: 30px 2.5px;
     color: #c6a163;
     box-shadow: 2px 2px 15px 5px #222633;
