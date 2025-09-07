@@ -1,6 +1,9 @@
 "use strict";
 
 const servicesLi = document.querySelectorAll(".services_li");
+const menu = document.getElementById("menu");
+const menuBtn = document.getElementById("menu_btn");
+const menuCloseBtn = document.getElementById("menu_close_btn");
 
 // Create an Intersection Observer
 const observer = new IntersectionObserver(
@@ -25,4 +28,21 @@ const observer = new IntersectionObserver(
 // Observe each .brief_card element
 servicesLi.forEach((card) => {
   observer.observe(card);
+});
+
+menuBtn.addEventListener("click", () => {
+  if (!menu.classList.contains("menu_visible")) {
+    menu.classList.add("menu_visible");
+  }
+});
+
+menu.addEventListener("click", (e) => {
+  // Check if the clicked element or its ancestors do NOT have the 'inner_menu' class
+  if (!e.target.closest(".inner_menu")) {
+    menu.classList.remove("menu_visible");
+  }
+});
+
+menuCloseBtn.addEventListener("click", () => {
+  menu.classList.remove("menu_visible");
 });

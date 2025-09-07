@@ -48,6 +48,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
+  overflow-x: hidden;
 }
 
 body {
@@ -255,6 +256,63 @@ header {
   padding: 0 15px;
   border-right: 1px solid #fff;
   font-size: 1.8rem;
+}
+
+.menu {
+  display: none;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(16, 43, 64, 0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.25s;
+}
+
+.menu_visible {
+  display: block;
+  opacity: 1;
+  user-select: auto;
+  pointer-events: unset;
+}
+
+.inner_menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #222633;
+  box-shadow: 0px 0px 15px 5px rgba(21, 21, 21, 0.25);
+  animation: enterViewRight 0.5s ease-out forwards;
+}
+
+@keyframes appearFromRight {
+}
+
+.dropdown_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  min-width: 32px;
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown_menu span {
+  display: block;
+  min-width: 100%;
+  width: 100%;
+  border-radius: 2px;
+  border: 2px solid #fff;
 }
 
 .hero {
@@ -904,6 +962,10 @@ footer::before {
 }
 
 @media screen and (max-width: 860px) {
+  .inner_menu {
+    width: 75%;
+  }
+
   .side_nav {
     display: none;
   }
@@ -931,7 +993,7 @@ footer::before {
   header {
     width: 100%;
     min-height: 400px;
-    height: 60vh;
+    height: 55vh;
     /* max-height: 600px; */
     /* overflow: hidden; */
   }
@@ -973,8 +1035,8 @@ footer::before {
     justify-content: center;
     align-items: center;
     background-color: #102b40;
-    min-height: calc(40vh - 60px);
-    height: calc(40vh - 60px);
+    min-height: calc(45vh - 60px);
+    height: calc(45vh - 60px);
     padding: 30px 2.5px;
     color: #c6a163;
     box-shadow: 2px 2px 15px 5px #222633;

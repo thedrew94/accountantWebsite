@@ -2,13 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Studio PDM</title>
 
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./script.js"></script>
   </head>
   <body>
+    <div class="menu" id="menu">
+      <div class="inner_menu">
+        <ul>
+          <li>TEST</li>
+          <li>TEST</li>
+          <li>TEST</li>
+          <li>TEST</li>
+          <li><button id="menu_close_btn">CLOSE MENU</button></li>
+        </ul>
+      </div>
+    </div>
     <!-- <nav class="side_nav">
       <ul>
         <li class="active"><h6>1</h6></li>
@@ -24,7 +35,14 @@
           <h6>STUDIO PDM</h6>
         </div>
         <ul class="main_nav_ul">
-          <li class="main_nav_li">I Nostri Social</li>
+          <li>
+            <button class="dropdown_menu" id="menu_btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </li>
+          <!-- <li class="main_nav_li">I Nostri Social</li>
           <li class="main_nav_li">
             <svg viewBox="0 0 24 24" width="30" height="30">
               <g>
@@ -49,7 +67,7 @@
                 <circle cx="18.406" cy="5.594" r="1.44" fill="#fff" />
               </g>
             </svg>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <div class="hero">
