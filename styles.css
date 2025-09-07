@@ -973,8 +973,8 @@ footer::before {
     justify-content: center;
     align-items: center;
     background-color: #102b40;
-    min-height: 40vh;
-    height: 40vh;
+    min-height: calc(40vh - 60px);
+    height: calc(40vh - 60px);
     padding: 30px 2.5px;
     color: #c6a163;
     box-shadow: 2px 2px 15px 5px #222633;
