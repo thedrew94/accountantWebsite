@@ -297,6 +297,16 @@ header {
   justify-content: center;
 }
 
+.main_word {
+  display: inline-block;
+  padding: 0 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #102b40;
+  text-shadow: 1px 1px 2px #000000;
+  height: 9rem;
+}
+
 .hero h2 {
   color: #ffffff;
   font-weight: bold;
@@ -817,6 +827,11 @@ footer::before {
     gap: 25px;
   }
 
+  .main_word {
+    padding: 0 5px;
+    height: 5.5rem;
+  }
+
   .hero h2 {
     font-size: 3.6rem;
   }
@@ -915,10 +930,15 @@ footer::before {
 
   header {
     width: 100%;
-    min-height: 300px;
-    height: 50vh;
+    min-height: 450px;
+    height: 65vh;
     /* max-height: 600px; */
     /* overflow: hidden; */
+  }
+
+  .main_word {
+    padding: 0 5px;
+    height: 3.3rem;
   }
 
   .hero {
@@ -939,7 +959,8 @@ footer::before {
 
   .decor1,
   .decor2 {
-    display: none;
+    opacity: 0.35;
+    background-color: #fff;
   }
 
   .brief {
@@ -964,10 +985,10 @@ footer::before {
   }
 
   .brief_mobile h3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: normal;
     color: #fff;
-    margin: 20px 0 40px;
+    margin: 10px 0 40px;
   }
 
   .brief_mobile_ul {
