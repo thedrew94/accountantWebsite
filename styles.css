@@ -1355,9 +1355,7 @@ footer::before {
   header {
     width: 100%;
     min-height: 400px;
-    height: 55vh;
-    /* max-height: 600px; */
-    /* overflow: hidden; */
+    height: 55svh;
   }
 
   .main_word {
@@ -1397,8 +1395,8 @@ footer::before {
     justify-content: center;
     align-items: center;
     background-color: #102b40;
-    min-height: calc(45vh - 60px);
-    height: calc(45vh - 60px);
+    min-height: 45svh;
+    height: 45svh;
     padding: 30px 2.5px;
     color: #c6a163;
     box-shadow: 2px 2px 15px 5px #222633;
@@ -1463,7 +1461,7 @@ footer::before {
   }
 
   .hero h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: normal;
     color: #c6a163;
   }
