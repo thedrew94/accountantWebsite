@@ -5,6 +5,7 @@ const menuLinks = document.querySelectorAll(".menu_link_btn");
 const menu = document.getElementById("menu");
 const menuBtn = document.getElementById("menu_btn");
 const menuCloseBtn = document.getElementById("menu_close_btn");
+const generateDocBtn = document.getElementById("generate_doc");
 
 // Create an Intersection Observer
 const observer = new IntersectionObserver(
@@ -52,4 +53,8 @@ menuLinks.forEach((link) => {
   link.addEventListener("click", () => {
     menu.classList.remove("menu_visible");
   });
+});
+
+generateDocBtn.addEventListener("click", () => {
+  window.print();
 });
