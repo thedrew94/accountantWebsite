@@ -1578,18 +1578,64 @@ footer::before {
   }
 
   footer {
-    padding: 20px;
-    padding-bottom: 150px;
-    overflow: hidden;
+    padding: 50px 15px 100px;
+    flex-direction: column-reverse;
+    gap: 50px;
   }
 
-  .footer_contact {
-    flex-direction: column;
+  .footer_left_area {
+    max-width: 300px;
+    margin: 0 auto;
+    align-items: center;
   }
 
-  .footer_logo img {
-    min-width: 100px;
-    width: 100%;
-    max-width: 400px;
+  .footer_social {
+    align-self: flex-end;
+  }
+
+  .footer_right_area {
+    justify-content: space-between;
+    gap: 0px;
+  }
+
+  .footer_navigation {
+    display: none;
+  }
+
+  .footer_navigation li:first-child,
+  .footer_contact li:first-child,
+  .footer_working_hours h6 {
+    margin-bottom: 10px;
+    font-size: 1.45rem;
+    font-weight: bold;
+  }
+
+  .footer_navigation li a,
+  .footer_contact li,
+  .footer_working_hours p {
+    font-size: 1.2rem;
+  }
+
+  .copyright {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    font-size: 1rem;
+    transform: translateX(-50%);
+  }
+
+  .contact_wa_btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8.5px 15px;
+    color: #222633;
+    border: 1px solid #c6a163;
+    border-radius: 13px;
+    background-color: #c6a163;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    text-align: center;
   }
 }
