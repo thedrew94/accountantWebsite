@@ -1345,7 +1345,7 @@ footer::before {
   }
 
   .main_nav_logo h6 {
-    font-size: 1.6rem;
+    font-size: 1.85rem;
   }
 
   .main_nav_li:nth-child(1) {
@@ -1474,6 +1474,19 @@ footer::before {
     width: 24px;
     height: 24px;
     transform: translate(-50%, 0);
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, -10px);
+    }
+    100% {
+      transform: translate(-50%, 0);
+    }
   }
 
   .btn_default {
