@@ -1294,6 +1294,12 @@ footer::before {
     gap: 5px;
   }
 
+  .footer_navigation li:not(:first-child):hover,
+  .footer_contact li:not(:first-child):hover {
+    text-decoration: underline;
+    text-underline-offset: 2.5px;
+  }
+
   .footer_navigation li:first-child,
   .footer_contact li:first-child,
   .footer_working_hours h6 {
