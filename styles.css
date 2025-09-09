@@ -296,7 +296,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 0 150px;
+  padding: 80px 0 75px;
   animation: enterViewRight 0.35s ease-out forwards;
 }
 
