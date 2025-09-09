@@ -754,8 +754,12 @@ header {
 }
 
 #services,
-#job_safety {
-  scroll-margin-top: 100px; /* Offset from the top */
+#job_safety,
+#introduction,
+#consultation,
+#footer {
+  /* Offset from the top */
+  scroll-margin-top: 100px;
 }
 
 .services_ul li::before {

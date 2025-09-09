@@ -1,6 +1,7 @@
 "use strict";
 
 const servicesLi = document.querySelectorAll(".services_li");
+const menuLinks = document.querySelectorAll(".menu_link_btn");
 const menu = document.getElementById("menu");
 const menuBtn = document.getElementById("menu_btn");
 const menuCloseBtn = document.getElementById("menu_close_btn");
@@ -45,4 +46,10 @@ menu.addEventListener("click", (e) => {
 
 menuCloseBtn.addEventListener("click", () => {
   menu.classList.remove("menu_visible");
+});
+
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("menu_visible");
+  });
 });
