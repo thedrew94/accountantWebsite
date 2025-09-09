@@ -56,5 +56,5 @@ menuLinks.forEach((link) => {
 });
 
 generateDocBtn.addEventListener("click", () => {
-  window.print();
+  // window.print();
 });
