@@ -29,20 +29,101 @@ const consultationStep3 = document.getElementById("step3");
 const firstStepContainer = document.querySelector(".first_step");
 const secondStepContainer = document.querySelector(".second_step");
 const thirdStepContainer = document.querySelector(".third_step");
+const fourthStepContainer = document.querySelector(".fourth_step");
+const inputNumber = document.querySelectorAll(".input_number");
+const consultationNavBtns = document.querySelectorAll(".cnslt_step_btn");
 
-consultationStep2.addEventListener("click", () => {
-  // window.print();
-  firstStepContainer.classList.remove("step_visible");
-  secondStepContainer.classList.remove("step_visible");
-  thirdStepContainer.classList.add("step_visible");
-});
-
-consultationStep1.addEventListener("click", () => {
-  // window.print();
+function handleConsultationStep1() {
+  consultationNavBtns.forEach((b) => {
+    if (b.dataset.numb === "1") {
+      b.classList.add("consultation_steps_sltd");
+    } else {
+      b.classList.remove("consultation_steps_sltd");
+    }
+  });
   firstStepContainer.classList.remove("step_visible");
   thirdStepContainer.classList.remove("step_visible");
+  fourthStepContainer.classList.remove("step_visible");
   secondStepContainer.classList.add("step_visible");
+}
+
+function handleConsultationStep2() {
+  consultationNavBtns.forEach((b) => {
+    if (b.dataset.numb === "2") {
+      b.classList.add("consultation_steps_sltd");
+    } else {
+      b.classList.remove("consultation_steps_sltd");
+    }
+  });
+  firstStepContainer.classList.remove("step_visible");
+  secondStepContainer.classList.remove("step_visible");
+  fourthStepContainer.classList.remove("step_visible");
+  thirdStepContainer.classList.add("step_visible");
+}
+
+function handleConsultationStep3() {
+  consultationNavBtns.forEach((b) => {
+    if (b.dataset.numb === "3") {
+      b.classList.add("consultation_steps_sltd");
+    } else {
+      b.classList.remove("consultation_steps_sltd");
+    }
+  });
+  firstStepContainer.classList.remove("step_visible");
+  secondStepContainer.classList.remove("step_visible");
+  thirdStepContainer.classList.remove("step_visible");
+  fourthStepContainer.classList.add("step_visible");
+}
+
+consultationNavBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const clickedBtnIdx = e.target.dataset.numb;
+    if (clickedBtnIdx === "1") {
+      handleConsultationStep1();
+    } else if (clickedBtnIdx === "2") {
+      handleConsultationStep2();
+    } else if (clickedBtnIdx === "3") {
+      handleConsultationStep3();
+    }
+  });
 });
+
+inputNumber.forEach((inp) => {
+  inp.addEventListener("input", (e) => {
+    let value = e.target.value;
+    value = value.replace(/[^0-9]/g, "");
+    e.target.value = value;
+  });
+
+  // Optional: Prevent pasting non-numeric content
+  inp.addEventListener("paste", (e) => {
+    const pastedData = e.clipboardData.getData("text");
+    if (!/^[0-9]*$/.test(pastedData)) {
+      // Block paste if it contains non-digits
+      e.preventDefault();
+    }
+  });
+
+  // Optional: Prevent decimal point and other special characters on keypress
+  inp.addEventListener("keypress", (e) => {
+    // Allow only digits (0-9)
+    if (!/[0-9]/.test(e.key)) {
+      e.preventDefault();
+      return;
+    }
+
+    const currentValue = e.target.value;
+    const newValue = currentValue + e.key;
+    const numericValue = parseInt(newValue, 10);
+    if (numericValue > 999999) {
+      e.preventDefault();
+    }
+  });
+});
+
+consultationStep3.addEventListener("click", handleConsultationStep3);
+consultationStep2.addEventListener("click", handleConsultationStep2);
+consultationStep1.addEventListener("click", handleConsultationStep1);
 
 // Create an Intersection Observer
 const observer = new IntersectionObserver(

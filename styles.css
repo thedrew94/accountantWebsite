@@ -895,11 +895,14 @@ label[for="regime-select"] {
 }
 
 /* Focus and hover states */
-#regime-select:focus {
+#regime-select:focus,
+.fieldset_number input {
   outline: none;
 }
 
-#regime-select:hover {
+#regime-select:hover,
+.fieldset_number input {
+  outline: none;
 }
 
 /* Styling the options (limited control) */
@@ -915,9 +918,32 @@ label[for="regime-select"] {
   background-color: #363c50;
 }
 
+.fieldset_number {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.fieldset_number input {
+  width: 125px;
+  padding: 15px;
+  border: 1px solid #222633;
+  border-radius: 5px;
+  background-color: #d6d6d6;
+  color: #222633;
+  box-shadow: 2px 2px 2px 0px rgb(34, 38, 51, 0.75);
+  font-size: 1.7rem;
+  font-weight: normal;
+  /* appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; */
+}
+
 .first_step,
 .second_step,
-.third_step {
+.third_step,
+.fourth_step {
   display: none;
   flex-direction: column;
   justify-content: center;
