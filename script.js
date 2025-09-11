@@ -23,7 +23,26 @@ const menuLinks = document.querySelectorAll(".menu_link_btn");
 const menu = document.getElementById("menu");
 const menuBtn = document.getElementById("menu_btn");
 const menuCloseBtn = document.getElementById("menu_close_btn");
-const generateDocBtn = document.getElementById("generate_doc");
+const consultationStep1 = document.getElementById("step1");
+const consultationStep2 = document.getElementById("step2");
+const consultationStep3 = document.getElementById("step3");
+const firstStepContainer = document.querySelector(".first_step");
+const secondStepContainer = document.querySelector(".second_step");
+const thirdStepContainer = document.querySelector(".third_step");
+
+consultationStep2.addEventListener("click", () => {
+  // window.print();
+  firstStepContainer.classList.remove("step_visible");
+  secondStepContainer.classList.remove("step_visible");
+  thirdStepContainer.classList.add("step_visible");
+});
+
+consultationStep1.addEventListener("click", () => {
+  // window.print();
+  firstStepContainer.classList.remove("step_visible");
+  thirdStepContainer.classList.remove("step_visible");
+  secondStepContainer.classList.add("step_visible");
+});
 
 // Create an Intersection Observer
 const observer = new IntersectionObserver(
@@ -71,8 +90,4 @@ menuLinks.forEach((link) => {
   link.addEventListener("click", () => {
     menu.classList.remove("menu_visible");
   });
-});
-
-generateDocBtn.addEventListener("click", () => {
-  // window.print();
 });

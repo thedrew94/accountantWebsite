@@ -286,10 +286,46 @@
         </li>
       </ul>
     </main>
-    <aside id="consultation">
-      <div class="consultation">
+    <aside class="consultation" id="consultation">
+      <div class="consultation_steps">
+        <button class="consultation_steps_sltd">1</button>
+
+        <button>2</button>
+
+        <button>3</button>
+      </div>
+
+      <!-- First step -->
+      <div class="first_step step_visible">
         <h2>Calcola il tuo preventivo personalizzato in pochi step</h2>
-        <button id="generate_doc">CALCOLA PREVENTIVO</button>
+        <button class="consultation_btn_start" id="step1">CALCOLA PREVENTIVO</button>
+      </div>
+
+      <!-- Second step -->
+      <div class="second_step">
+        <div class="select-container">
+          <label for="regime-select">Selezione tipologia regime</label>
+          <select name="regime" id="regime-select">
+            <option value="" disabled>Seleziona un'opzione</option>
+            <option value="ordinario" selected>Regime Ordinario</option>
+            <option value="semplificato">Regime Semplificato</option>
+            <option value="forfettario">Regime Forfettario</option>
+          </select>
+        </div>
+        <button class="consultation_btn_start" id="step2">AVANTI</button>
+      </div>
+
+      <!-- Third step -->
+      <div class="third_step">
+        <div>
+          <label for="regime-select">Numero fatture</label>
+          <input type="text" name="" id="" placeholder="10" />
+        </div>
+        <div>
+          <label for="regime-select">Fatturato</label>
+          <input type="text" name="" id="" placeholder="10000" />
+        </div>
+        <button class="consultation_btn_start" id="step3">CALCOLA</button>
       </div>
     </aside>
     <aside class="our_mission" id="our_mission">
