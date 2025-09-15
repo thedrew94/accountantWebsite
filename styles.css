@@ -156,6 +156,68 @@ img:not([src]) {
   }
 }
 
+.cookie_modal {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 800px;
+  height: 180px;
+  padding: 15px;
+  border: 2px solid #222633;
+  border-radius: 7px;
+  color: #222633;
+  background-color: #fff;
+  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, 500px);
+  animation: enterView 0.25s ease-out forwards;
+  animation-delay: 1.75s;
+}
+
+@keyframes enterView {
+  from {
+    transform: translate(-50%, 500px);
+  }
+  to {
+    transform: translate(-50%, 0px);
+  }
+}
+
+.cookie_modal svg {
+  position: absolute;
+  z-index: 0;
+  width: 36px;
+  height: 36px;
+  bottom: 15px;
+  left: 15px;
+}
+
+.cookie_modal svg path,
+.cookie_modal svg circle {
+  fill: #222633;
+  opacity: 0.35;
+}
+
+.cookie_modal p {
+  font-size: 1.6rem;
+}
+
+.cookie_modal button {
+  width: 150px;
+  margin-left: auto;
+  padding: 7.5px 15px;
+  border: 1px solid #212121;
+  border-radius: 5px;
+  background-color: #222633;
+  color: #fff;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
 .side_nav {
   position: fixed; /* Fixed to stay in viewport regardless of scroll */
   top: 50%; /* Center vertically */
@@ -1425,6 +1487,26 @@ footer::before {
 }
 
 @media screen and (max-width: 860px) {
+  .cookie_modal {
+    height: 220px;
+  }
+
+  .cookie_modal p {
+    font-size: 1.5rem;
+  }
+
+  .cookie_modal button {
+    width: 150px;
+    margin-left: auto;
+    padding: 7.5px 15px;
+    border: 1px solid #212121;
+    border-radius: 5px;
+    background-color: #222633;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
   .inner_menu {
     width: 75%;
   }

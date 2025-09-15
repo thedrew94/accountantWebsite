@@ -20,6 +20,8 @@ console.log("Thank you for passing by! Follow me on LinkedIn : Tornyai Laurentiu
 
 const servicesLi = document.querySelectorAll(".services_li");
 const menuLinks = document.querySelectorAll(".menu_link_btn");
+const cookieModal = document.getElementById("cookie_modal");
+const cookieModalBtn = cookieModal?.querySelector("button");
 const menu = document.getElementById("menu");
 const menuBtn = document.getElementById("menu_btn");
 const menuCloseBtn = document.getElementById("menu_close_btn");
@@ -32,6 +34,14 @@ const thirdStepContainer = document.querySelector(".third_step");
 const fourthStepContainer = document.querySelector(".fourth_step");
 const inputNumber = document.querySelectorAll(".input_number");
 const consultationNavBtns = document.querySelectorAll(".cnslt_step_btn");
+
+if (cookieModal && cookieModalBtn) {
+  cookieModalBtn.addEventListener("click", () => {
+    cookieModal.remove();
+  });
+} else {
+  console.warn("Cookie modal or button not found in the DOM.");
+}
 
 function handleConsultationStep1() {
   consultationNavBtns.forEach((b) => {
