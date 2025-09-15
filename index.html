@@ -303,14 +303,30 @@
 
       <!-- Second step -->
       <div class="second_step">
-        <div class="select-container">
-          <label for="regime-select">Selezione tipologia regime</label>
-          <select name="regime" id="regime-select">
-            <option value="" disabled>Seleziona un'opzione</option>
-            <option value="ordinario" selected>Regime Ordinario</option>
-            <option value="semplificato">Regime Semplificato</option>
-            <option value="forfettario">Regime Forfettario</option>
-          </select>
+        <div class="second_step_inner">
+          <div class="select-container">
+            <label for="regime-select">Selezione tipologia regime</label>
+            <select name="regime" id="regime-select">
+              <option value="" disabled>Seleziona un'opzione</option>
+              <option value="ordinario" selected>Regime Ordinario</option>
+              <option value="semplificato">Regime Semplificato</option>
+              <option value="forfettario">Regime Forfettario</option>
+            </select>
+          </div>
+          <div class="select-container">
+            <label for="regime-number">Numero dipendendi</label>
+            <input
+              type="number"
+              name="regime-number"
+              id="regime-number"
+              placeholder="10"
+              inputmode="numeric"
+              pattern="[0-9]*"
+              class="input_number"
+              min="0"
+              step="10"
+            />
+          </div>
         </div>
         <button class="consultation_btn_start" id="step2">AVANTI</button>
       </div>
@@ -445,7 +461,7 @@
                 fill="#fff"
               />
             </svg>
-            <p>09:40 ~ 18:00 Lun - Dom</p>
+            <p>09:00 ~ 18:00 Lun - Ven</p>
           </div>
           <div class="working_hours">
             <svg viewBox="0 0 24 24" width="14px" height="14px">

@@ -867,7 +867,8 @@ header {
 }
 
 /* Label styling (if used) */
-label[for="regime-select"] {
+label[for="regime-select"],
+label[for="regime-number"] {
   text-align: center;
   font-size: 2.6rem;
   letter-spacing: 0.05em;
@@ -876,8 +877,9 @@ label[for="regime-select"] {
 }
 
 /* Styling the select element */
-#regime-select {
-  width: 250px;
+#regime-select,
+#regime-number {
+  width: 350px;
   padding: 15px;
   border: 1px solid #222633;
   border-radius: 5px;
@@ -894,26 +896,36 @@ label[for="regime-select"] {
   background-position: right 10px center;
 }
 
+#regime-number {
+  background-image: none;
+}
+
 /* Focus and hover states */
 #regime-select:focus,
-.fieldset_number input {
+#regime-number:focus,
+.fieldset_number input,
+.select-container input {
   outline: none;
 }
 
 #regime-select:hover,
-.fieldset_number input {
+#regime-number:focus,
+.fieldset_number input,
+.select-container input {
   outline: none;
 }
 
 /* Styling the options (limited control) */
-#regime-select option {
+#regime-select option,
+#regime-number option {
   font-size: 1.4rem;
   color: inherit;
   background-color: #d6d6d6;
 }
 
 /* Styling the disabled option (placeholder) */
-#regime-select option:disabled {
+#regime-select option:disabled,
+#regime-number option:disabled {
   color: #222633;
   background-color: #363c50;
 }
@@ -922,10 +934,12 @@ label[for="regime-select"] {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
 }
 
-.fieldset_number input {
+.fieldset_number input,
+.select-container input {
   width: 125px;
   padding: 15px;
   border: 1px solid #222633;
@@ -940,6 +954,11 @@ label[for="regime-select"] {
   -moz-appearance: none; */
 }
 
+.select-container input {
+  width: 350px;
+  padding: 15px;
+}
+
 .first_step,
 .second_step,
 .third_step,
@@ -949,6 +968,13 @@ label[for="regime-select"] {
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+
+.second_step_inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
 }
 
 .step_visible {
@@ -1661,6 +1687,27 @@ footer::before {
 
   .our_mission_image {
     display: none;
+  }
+
+  .second_step_inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  label[for="regime-select"],
+  label[for="regime-number"] {
+    font-size: 2rem;
+  }
+
+  #regime-select,
+  #regime-number {
+    padding: 12.5px;
+    font-size: 1.6rem;
+  }
+
+  .consultation_btn_start {
+    padding: 12.5px;
+    font-size: 1.6rem;
   }
 
   footer {
