@@ -1519,6 +1519,10 @@ footer::before {
     width: 75%;
   }
 
+  .inner_menu ul {
+    gap: 15px;
+  }
+
   .side_nav {
     display: none;
   }
