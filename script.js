@@ -34,6 +34,7 @@ const thirdStepContainer = document.querySelector(".third_step");
 const fourthStepContainer = document.querySelector(".fourth_step");
 const inputNumber = document.querySelectorAll(".input_number");
 const consultationNavBtns = document.querySelectorAll(".cnslt_step_btn");
+const progressBarInner = document.querySelector(".swiper_progressbar_inner");
 
 if (cookieModal && cookieModalBtn) {
   cookieModalBtn.addEventListener("click", () => {
@@ -188,7 +189,9 @@ const swiper = new Swiper(".news_swiper", {
   direction: "horizontal",
   loop: true,
   slidesPerView: 1,
-
+  autoplay: {
+    delay: 3000,
+  },
   // If we need pagination
   pagination: {
     el: ".swiper-pagination",
@@ -199,4 +202,35 @@ const swiper = new Swiper(".news_swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  on: {
+    init: function () {
+      restartAnimation();
+    },
+    // slideChangeTransitionStart: function () {
+    //   restartAnimation(); // Restart animation on slide change
+    //   console.log("es 2");
+    // },
+    autoplayPause: function () {
+      pauseAnimation();
+    },
+    autoplayResume: function () {
+      resumeAnimation();
+    },
+  },
 });
+
+function restartAnimation() {
+  // Remove and re-apply the animation to restart it
+  progressBarInner.style.animation = "none";
+  void progressBarInner.offsetWidth; // Trigger reflow to reset animation
+  progressBarInner.style.animation = "progressbarFill 3s linear infinite";
+  progressBarInner.classList.remove("paused"); // Ensure it's running
+}
+
+function pauseAnimation() {
+  progressBarInner.classList.add("paused");
+}
+
+function resumeAnimation() {
+  restartAnimation();
+}
