@@ -185,19 +185,15 @@ menuLinks.forEach((link) => {
 });
 
 const swiper = new Swiper(".news_swiper", {
-  // Optional parameters
   direction: "horizontal",
   loop: true,
   slidesPerView: 1,
   autoplay: {
     delay: 3000,
   },
-  // If we need pagination
   pagination: {
     el: ".swiper-pagination",
   },
-
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -220,11 +216,10 @@ const swiper = new Swiper(".news_swiper", {
 });
 
 function restartAnimation() {
-  // Remove and re-apply the animation to restart it
   progressBarInner.style.animation = "none";
-  void progressBarInner.offsetWidth; // Trigger reflow to reset animation
+  void progressBarInner.offsetWidth;
   progressBarInner.style.animation = "progressbarFill 3s linear infinite";
-  progressBarInner.classList.remove("paused"); // Ensure it's running
+  progressBarInner.classList.remove("paused");
 }
 
 function pauseAnimation() {
