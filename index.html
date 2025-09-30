@@ -49,12 +49,14 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://github.com/thedrew94/accountantWebsite" />
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12.0.2/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12.0.2/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles.css" />
+
     <script defer src="./script.js"></script>
   </head>
   <body>
-    <div class="cookie_modal" id="cookie_modal">
+    <!-- <div class="cookie_modal" id="cookie_modal">
       <svg viewBox="0 0 24 24" width="36" height="36">
         <circle cx="18.5" cy="1.5" r="1.5" />
         <circle cx="21.5" cy="6.5" r="1.5" />
@@ -69,7 +71,7 @@
         privacy.
       </p>
       <button>Ho capito</button>
-    </div>
+    </div> -->
     <div class="menu" id="menu">
       <div class="inner_menu">
         <ul>
@@ -459,6 +461,61 @@
         <div class="our_mission_image"></div>
       </div>
     </aside>
+    <div class="news">
+      <!-- Slider main container -->
+      <div class="swiper news_swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="swiper_slide_inner">
+              <div class="news_swiper_main_img">
+                <img src="./assets/bg3.jpg" alt="" />
+              </div>
+              <div class="news_slide_info">
+                <div>
+                  <span class="news_slide_date">22/12/2025</span>
+                  <h2>Happy hourly relax on the beach for improvement hourly relax on the beach for improvement</h2>
+                </div>
+                <div class="news_slide_author">
+                  <img src="./assets/bg.jpg" alt="" width="28px" height="28px" />
+                  <div>
+                    <h6>Commercialist con 4 anni esperienza</h6>
+                    <h5>Antonio di Mauro</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper_slide_inner">
+              <div class="news_swiper_main_img">
+                <img src="./assets/bg3.jpg" alt="" />
+              </div>
+              <div class="news_slide_info">
+                <div>
+                  <span class="news_slide_date">22/12/2025</span>
+                  <h2>Happy hourly relax on the beach for</h2>
+                </div>
+                <div class="news_slide_author">
+                  <img src="./assets/bg.jpg" alt="" width="28px" height="28px" />
+                  <div>
+                    <h6>Commercialist con 4 anni esperienza</h6>
+                    <h5>Antonio di Mauro</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
     <div class="footer_contact_map">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.2284742604647!2d12.548352976477315!3d41.866430566144004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f620c9bf78e01%3A0x56257c48aeb8a64f!2sVia%20Gaio%20Melisso%2C%2050%2C%2000175%20Roma%20RM!5e0!3m2!1sit!2sit!4v1756124616985!5m2!1sit!2sit"
