@@ -461,7 +461,7 @@
         <div class="our_mission_image"></div>
       </div>
     </aside>
-    <div class="news">
+    <div class="news" id="news">
       <div class="news_our_picks">
         <h2 class="news_our_picks_h2">Consigliati da noi</h2>
         <h3 class="news_our_picks_h3">
@@ -719,5 +719,100 @@
       </div>
       <small class="copyright">&copy; 2025 Studio PDM. All rights reserved.</small>
     </footer>
+
+    <div id="template_container"></div>
+
+    <template id="article_template_1">
+      <div class="template_content">
+        <div class="template_bg_img">
+          <img src="./assets/contract_img.jpg" alt="" />
+          <h2>Titolo articolo</h2>
+          <div class="template_social">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <g>
+                <path
+                  d="M12,2.162c3.204,0,3.584,0.012,4.849,0.07c1.308,0.06,2.655,0.358,3.608,1.311c0.962,0.962,1.251,2.296,1.311,3.608   c0.058,1.265,0.07,1.645,0.07,4.849c0,3.204-0.012,3.584-0.07,4.849c-0.059,1.301-0.364,2.661-1.311,3.608   c-0.962,0.962-2.295,1.251-3.608,1.311c-1.265,0.058-1.645,0.07-4.849,0.07s-3.584-0.012-4.849-0.07   c-1.291-0.059-2.669-0.371-3.608-1.311c-0.957-0.957-1.251-2.304-1.311-3.608c-0.058-1.265-0.07-1.645-0.07-4.849   c0-3.204,0.012-3.584,0.07-4.849c0.059-1.296,0.367-2.664,1.311-3.608c0.96-0.96,2.299-1.251,3.608-1.311   C8.416,2.174,8.796,2.162,12,2.162 M12,0C8.741,0,8.332,0.014,7.052,0.072C5.197,0.157,3.355,0.673,2.014,2.014   C0.668,3.36,0.157,5.198,0.072,7.052C0.014,8.332,0,8.741,0,12c0,3.259,0.014,3.668,0.072,4.948c0.085,1.853,0.603,3.7,1.942,5.038   c1.345,1.345,3.186,1.857,5.038,1.942C8.332,23.986,8.741,24,12,24c3.259,0,3.668-0.014,4.948-0.072   c1.854-0.085,3.698-0.602,5.038-1.942c1.347-1.347,1.857-3.184,1.942-5.038C23.986,15.668,24,15.259,24,12   c0-3.259-0.014-3.668-0.072-4.948c-0.085-1.855-0.602-3.698-1.942-5.038c-1.343-1.343-3.189-1.858-5.038-1.942   C15.668,0.014,15.259,0,12,0z"
+                  fill="#222633"
+                />
+                <path
+                  d="M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162   C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z"
+                  fill="#222633"
+                />
+                <circle cx="18.406" cy="5.594" r="1.44" fill="#222633" />
+              </g>
+            </svg>
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <g>
+                <path
+                  d="M12,2.162c3.204,0,3.584,0.012,4.849,0.07c1.308,0.06,2.655,0.358,3.608,1.311c0.962,0.962,1.251,2.296,1.311,3.608   c0.058,1.265,0.07,1.645,0.07,4.849c0,3.204-0.012,3.584-0.07,4.849c-0.059,1.301-0.364,2.661-1.311,3.608   c-0.962,0.962-2.295,1.251-3.608,1.311c-1.265,0.058-1.645,0.07-4.849,0.07s-3.584-0.012-4.849-0.07   c-1.291-0.059-2.669-0.371-3.608-1.311c-0.957-0.957-1.251-2.304-1.311-3.608c-0.058-1.265-0.07-1.645-0.07-4.849   c0-3.204,0.012-3.584,0.07-4.849c0.059-1.296,0.367-2.664,1.311-3.608c0.96-0.96,2.299-1.251,3.608-1.311   C8.416,2.174,8.796,2.162,12,2.162 M12,0C8.741,0,8.332,0.014,7.052,0.072C5.197,0.157,3.355,0.673,2.014,2.014   C0.668,3.36,0.157,5.198,0.072,7.052C0.014,8.332,0,8.741,0,12c0,3.259,0.014,3.668,0.072,4.948c0.085,1.853,0.603,3.7,1.942,5.038   c1.345,1.345,3.186,1.857,5.038,1.942C8.332,23.986,8.741,24,12,24c3.259,0,3.668-0.014,4.948-0.072   c1.854-0.085,3.698-0.602,5.038-1.942c1.347-1.347,1.857-3.184,1.942-5.038C23.986,15.668,24,15.259,24,12   c0-3.259-0.014-3.668-0.072-4.948c-0.085-1.855-0.602-3.698-1.942-5.038c-1.343-1.343-3.189-1.858-5.038-1.942   C15.668,0.014,15.259,0,12,0z"
+                  fill="#222633"
+                />
+                <path
+                  d="M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162   C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z"
+                  fill="#222633"
+                />
+                <circle cx="18.406" cy="5.594" r="1.44" fill="#222633" />
+              </g>
+            </svg>
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <g>
+                <path
+                  d="M12,2.162c3.204,0,3.584,0.012,4.849,0.07c1.308,0.06,2.655,0.358,3.608,1.311c0.962,0.962,1.251,2.296,1.311,3.608   c0.058,1.265,0.07,1.645,0.07,4.849c0,3.204-0.012,3.584-0.07,4.849c-0.059,1.301-0.364,2.661-1.311,3.608   c-0.962,0.962-2.295,1.251-3.608,1.311c-1.265,0.058-1.645,0.07-4.849,0.07s-3.584-0.012-4.849-0.07   c-1.291-0.059-2.669-0.371-3.608-1.311c-0.957-0.957-1.251-2.304-1.311-3.608c-0.058-1.265-0.07-1.645-0.07-4.849   c0-3.204,0.012-3.584,0.07-4.849c0.059-1.296,0.367-2.664,1.311-3.608c0.96-0.96,2.299-1.251,3.608-1.311   C8.416,2.174,8.796,2.162,12,2.162 M12,0C8.741,0,8.332,0.014,7.052,0.072C5.197,0.157,3.355,0.673,2.014,2.014   C0.668,3.36,0.157,5.198,0.072,7.052C0.014,8.332,0,8.741,0,12c0,3.259,0.014,3.668,0.072,4.948c0.085,1.853,0.603,3.7,1.942,5.038   c1.345,1.345,3.186,1.857,5.038,1.942C8.332,23.986,8.741,24,12,24c3.259,0,3.668-0.014,4.948-0.072   c1.854-0.085,3.698-0.602,5.038-1.942c1.347-1.347,1.857-3.184,1.942-5.038C23.986,15.668,24,15.259,24,12   c0-3.259-0.014-3.668-0.072-4.948c-0.085-1.855-0.602-3.698-1.942-5.038c-1.343-1.343-3.189-1.858-5.038-1.942   C15.668,0.014,15.259,0,12,0z"
+                  fill="#222633"
+                />
+                <path
+                  d="M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162s6.162-2.759,6.162-6.162   C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z"
+                  fill="#222633"
+                />
+                <circle cx="18.406" cy="5.594" r="1.44" fill="#222633" />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="template_body">
+          <p>
+            dal 1° gennaio 2025, i contratti di prestiti e di distacchi di personale stipulati o rinnovati sono soggetti
+            a Iva, a meno che gli stessi non siano realizzati senza una stretta correlazione nel rapporto di reciprocità
+            tra distaccante e distaccataria.
+          </p>
+          <p>
+            In sede di conversione, al Dl 131/2024 (decreto Salva infrazioni) è stato inserito l’articolo 16 ter che
+            abroga l’articolo 8 comma 35, della legge 67/1998, secondo cui «non sono da intendere rilevanti ai fini
+            dell’imposta sul valore aggiunto i prestiti o i distacchi di personale a fronte dei quali è versato solo il
+            rimborso del relativo costo». La modifica normativa è stata dettata dalla necessità di uniformare
+            l’ordinamento nazionale all’interpretazione della Corte di giustizia Ue espressa nella pronuncia San
+            Domenico Vetraria (causa C-94/19), secondo la quale è incompatibile con la direttiva Iva una norma nazionale
+            in base alla quale non sono ritenuti rilevanti, sotto il profilo Iva, i prestiti o i distacchi di personale
+            di una controllante presso la sua controllata, a fronte dei quali è versato solo il rimborso del relativo
+            costo, a patto che gli importi versati dalla controllata a favore della società controllante, da un lato, e
+            tali prestiti o distacchi, dall’altro, si condizionino reciprocamente. Già alla luce della sentenza era
+            emersa la necessità di rivedere il trattamento fiscale di tali tipi di contratti, diffusi soprattutto
+            all’interno dei gruppi societari, ma che non lasciano indifferenti neppure le associazioni di categoria. La
+            fattispecie di distacco si realizza ogni qualvolta il datore di lavoro - di solito la società controllante
+            per esigenze proprie, pone temporaneamente uno o più lavoratori a disposizione di un’altra società del
+            gruppo – di solito una società controllata – al fine dello svolgimento di una determinata attività. La
+            controllante («distaccante») rimane responsabile della gestione, sia sul piano giuridico sia economico, del
+            rapporto di lavoro con il dipendente; la controllata («distaccataria»), che di fatto beneficia della
+            prestazione lavorativa del lavoratore distaccato versa alla controllata un importo, a titolo di rimborso,
+            pari al costo del personale effettivamente sostenuto da quest’ultima. In assenza di un mark-up,
+            l’ordinamento italiano riteneva tali rimborsi fuori dal campo di applicazione dell’imposta. Con
+            l’abrogazione della norma interna, dunque, potrebbero assumere rilevanza ai fini Iva anche i flussi
+            intercompany di distacchi del personale di cui è ribaltato il mero costo. L’uso del condizionale però è
+            d’obbligo. L’abrogazione della norma domestica non implica automaticamente l’assoggettamento a Iva di ogni
+            fattispecie di distacco o prestito. Per assumere rilevanza, dal punto di vista dell’imposizione indiretta,
+            l’operazione deve comunque integrare il requisito oggettivo, che richiede l’esistenza del nesso di
+            corrispettività tra il distacco di personale, da un lato, e il pagamento da parte della società
+            distaccataria di somme a titolo di corrispettivo del distacco, dall’altro. Tale nesso potrebbe venire meno
+            nell’ipotesi in cui l’interesse della società distaccante non si identifichi con quello di ricevere il
+            corrispettivo del distacco, talché, estremizzando, potrebbe anche non riceverlo senza che ciò comprometta il
+            distacco. In altre parole, se il distacco del personale è frutto di una scelta più ampia della distaccante
+            (ad esempio, di natura strategica, progettuale o formativa) che prescinde dal mero rimborso del costo del
+            lavoro, restano margini di non rilevanza fiscale. Guardando al passato, lo stesso Legislatore chiarisce che
+            sono fatti salvi i comportamenti adottati dai contribuenti fino al 31 dicembre 2024, conformi alla norma
+            interna o all’orientamento dei giudici UE, per i quali non siano intervenuti accertamenti definitivi.
+          </p>
+        </div>
+      </div>
+    </template>
   </body>
 </html>

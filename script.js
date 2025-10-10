@@ -21,6 +21,10 @@ console.log("Thank you for passing by! Follow me on LinkedIn : Tornyai Laurentiu
 const servicesLi = document.querySelectorAll(".services_li");
 const menuLinks = document.querySelectorAll(".menu_link_btn");
 const cookieModal = document.getElementById("cookie_modal");
+const news = document.getElementById("news");
+const footer = document.getElementById("footer");
+const templateContainer = document.getElementById("template_container");
+const articleTemplate1 = document.getElementById("article_template_1");
 const cookieModalBtn = cookieModal?.querySelector("button");
 const menu = document.getElementById("menu");
 const menuBtn = document.getElementById("menu_btn");
@@ -184,36 +188,48 @@ menuLinks.forEach((link) => {
   });
 });
 
-const swiper = new Swiper(".news_swiper", {
-  direction: "horizontal",
-  loop: true,
-  slidesPerView: 1,
-  autoplay: {
-    delay: 3000,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  on: {
-    init: function () {
-      restartAnimation();
+let swiper = initializeSwiper();
+
+function initializeSwiper() {
+  const swiperContainer = document.querySelector(".news_swiper");
+
+  if (!swiperContainer) return;
+  if (swiperContainer.swiper) {
+    // true, true: deleteInstance, cleanStyles
+    swiperContainer.swiper.destroy(true, true);
+  }
+
+  return new Swiper(".news_swiper", {
+    direction: "horizontal",
+    loop: true,
+    slidesPerView: 1,
+    autoplay: {
+      delay: 3000,
     },
-    // slideChangeTransitionStart: function () {
-    //   restartAnimation(); // Restart animation on slide change
-    //   console.log("es 2");
-    // },
-    autoplayPause: function () {
-      pauseAnimation();
+    pagination: {
+      el: ".swiper-pagination",
     },
-    autoplayResume: function () {
-      resumeAnimation();
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
-  },
-});
+    on: {
+      init: function () {
+        restartAnimation();
+      },
+      // slideChangeTransitionStart: function () {
+      //   restartAnimation(); // Restart animation on slide change
+      //   console.log("es 2");
+      // },
+      autoplayPause: function () {
+        pauseAnimation();
+      },
+      autoplayResume: function () {
+        resumeAnimation();
+      },
+    },
+  });
+}
 
 function restartAnimation() {
   progressBarInner.style.animation = "none";
@@ -229,3 +245,29 @@ function pauseAnimation() {
 function resumeAnimation() {
   restartAnimation();
 }
+
+const templateContent = articleTemplate1.content.cloneNode(true);
+const footerContent = footer.cloneNode(true);
+const newsContent = news.cloneNode(true);
+
+function renderArticleContent() {
+  templateContainer.innerHTML = "";
+  templateContainer.appendChild(templateContent);
+  document.querySelector(".template_content").appendChild(newsContent);
+  document.querySelector(".template_content").appendChild(footerContent);
+  initializeSwiper();
+}
+
+window.addEventListener("popstate", renderArticleContent);
+
+renderArticleContent();
+// function renderArticleContent() {
+//   const path = window.location.pathname;
+//   if (path === "/news") {
+//     templateContainer.innerHTML = "";
+//     templateContainer.appendChild(templateContent);
+//     document.querySelector(".template_content").appendChild(footerContent);
+//   }
+// }
+
+// window.addEventListener("popstate", renderArticleContent);

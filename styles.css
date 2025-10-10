@@ -1503,6 +1503,56 @@ footer::before {
   animation-play-state: paused !important;
 }
 
+.template_content {
+  position: fixed;
+  z-index: 1;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+
+  overflow: auto;
+}
+
+.template_bg_img {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  color: #222633;
+  overflow: hidden;
+}
+
+.template_bg_img img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.template_bg_img h2 {
+  font-size: 6rem;
+}
+
+.template_body {
+  max-width: 1000px;
+  margin: 50px auto;
+  color: #222633;
+}
+
+.template_body p {
+  font-size: 2rem;
+}
+
 @media screen and (max-width: 1250px) {
   .hero_description {
     top: 15%;
