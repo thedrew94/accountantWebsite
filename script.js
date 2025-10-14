@@ -25,10 +25,12 @@ const news = document.getElementById("news");
 const footer = document.getElementById("footer");
 const templateContainer = document.getElementById("template_container");
 const articleTemplate1 = document.getElementById("article_template_1");
+const articleTemplate2 = document.getElementById("article_template_2");
 const cookieModalBtn = cookieModal?.querySelector("button");
 const menu = document.getElementById("menu");
 const menuBtn = document.getElementById("menu_btn");
 const menuCloseBtn = document.getElementById("menu_close_btn");
+
 const consultationStep1 = document.getElementById("step1");
 const consultationStep2 = document.getElementById("step2");
 const consultationStep3 = document.getElementById("step3");
@@ -38,7 +40,9 @@ const thirdStepContainer = document.querySelector(".third_step");
 const fourthStepContainer = document.querySelector(".fourth_step");
 const inputNumber = document.querySelectorAll(".input_number");
 const consultationNavBtns = document.querySelectorAll(".cnslt_step_btn");
+const archiveNews = document.querySelectorAll(".archived_news");
 const progressBarInner = document.querySelector(".swiper_progressbar_inner");
+const logoBtn = document.querySelector(".main_nav_logo");
 
 if (cookieModal && cookieModalBtn) {
   cookieModalBtn.addEventListener("click", () => {
@@ -184,6 +188,7 @@ menuCloseBtn.addEventListener("click", () => {
 
 menuLinks.forEach((link) => {
   link.addEventListener("click", () => {
+    removeTemplateContent();
     menu.classList.remove("menu_visible");
   });
 });
@@ -192,12 +197,19 @@ let swiper = initializeSwiper();
 
 function initializeSwiper() {
   const swiperContainer = document.querySelector(".news_swiper");
+  const slides = document.querySelectorAll(".swiper-slide");
 
   if (!swiperContainer) return;
   if (swiperContainer.swiper) {
     // true, true: deleteInstance, cleanStyles
     swiperContainer.swiper.destroy(true, true);
   }
+
+  slides.forEach((s) => {
+    s.addEventListener("click", () => {
+      renderArticleContent({ articleNumber: 1 });
+    });
+  });
 
   return new Swiper(".news_swiper", {
     direction: "horizontal",
@@ -246,21 +258,43 @@ function resumeAnimation() {
   restartAnimation();
 }
 
-const templateContent = articleTemplate1.content.cloneNode(true);
-const footerContent = footer.cloneNode(true);
-const newsContent = news.cloneNode(true);
+function renderArticleContent({ articleNumber = 1 }) {
+  const templateContent1 = articleTemplate1.content.cloneNode(true);
+  const templateContent2 = articleTemplate2.content.cloneNode(true);
+  const footerContent = footer.cloneNode(true);
+  const newsContent = news.cloneNode(true);
 
-function renderArticleContent() {
   templateContainer.innerHTML = "";
-  templateContainer.appendChild(templateContent);
+  templateContainer.appendChild(templateContent1);
+  const goBackBtn = document.getElementById("go_back");
+  goBackBtn.addEventListener("click", () => {
+    console.log("clicakto");
+
+    removeTemplateContent();
+  });
+
   document.querySelector(".template_content").appendChild(newsContent);
   document.querySelector(".template_content").appendChild(footerContent);
   initializeSwiper();
 }
 
-window.addEventListener("popstate", renderArticleContent);
+// window.addEventListener("popstate", renderArticleContent);
 
-renderArticleContent();
+function removeTemplateContent() {
+  templateContainer.innerHTML = "";
+  initializeSwiper();
+}
+
+logoBtn.addEventListener("click", () => {
+  removeTemplateContent();
+});
+
+archiveNews.forEach((news) => {
+  news.addEventListener("click", () => {
+    renderArticleContent({ articleNumber: 1 });
+  });
+});
+
 // function renderArticleContent() {
 //   const path = window.location.pathname;
 //   if (path === "/news") {
@@ -269,5 +303,3 @@ renderArticleContent();
 //     document.querySelector(".template_content").appendChild(footerContent);
 //   }
 // }
-
-// window.addEventListener("popstate", renderArticleContent);
