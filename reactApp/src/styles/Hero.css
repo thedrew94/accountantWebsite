@@ -1,0 +1,151 @@
+.hero {
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url("/lowpoly.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+}
+
+.hero_content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.hero h2 {
+  max-width: 800px;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 130%;
+  font-family: "Cinzel", serif;
+  font-weight: normal;
+}
+
+.hero h2 span {
+  padding: 0 10px;
+  border-radius: 3px;
+  background-color: #f7f7f7;
+  color: #222633;
+  font-weight: 500;
+}
+
+.hero h3 {
+  max-width: 1000px;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 130%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+.hero_scroll {
+  position: absolute;
+  bottom: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero_scroll::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #f7f7f7;
+  border-radius: 50%;
+  shape-outside: circle(50%);
+  animation: zoomInAndOut 3s ease-in-out infinite;
+}
+
+.hero_scroll::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border: 2px solid rgb(247, 247, 247, 0.1);
+  border-radius: 50%;
+  shape-outside: circle(50%);
+  animation: zoomInAndOutFade 2s ease-in-out infinite;
+}
+
+@keyframes zoomInAndOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomInAndOutFade {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.hero_scroll p {
+  position: absolute;
+  right: -65px;
+  width: 100%;
+  font-size: 1.8rem;
+  line-height: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  transform-origin: center;
+  writing-mode: vertical-rl;
+}
+
+.hero_location {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero_location h6 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 2.8rem;
+  line-height: 130%;
+}
+
+/* style={{ width: "100%", height: "100vh", background: "#222633" }} */

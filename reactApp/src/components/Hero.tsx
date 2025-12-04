@@ -1,33 +1,101 @@
+import { svgSelector } from "../utils/svgSelector";
+import Button from "./Button";
+
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+
 export default function Hero() {
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: hero,
+        start: "top top",
+        end: "+=600",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+      },
+    });
+
+    tl.to(
+      ".hero_bg",
+      {
+        scale: 1.5,
+        ease: "power2.out",
+      },
+      0
+    )
+      .to(
+        ".hero_content",
+        {
+          y: "-30vh",
+          scale: 0.9,
+          ease: "none",
+        },
+        0
+      )
+      .to(
+        "main",
+        {
+          y: "-60vh",
+          ease: "none",
+        },
+        0
+      );
+
+    tl.to(
+      hero,
+      {
+        opacity: 0,
+        ease: "none",
+      },
+      0.3
+    ).to(
+      "body",
+      {
+        backgroundColor: "#f7f7f7",
+      },
+      0.8
+    );
+  }, []);
+
   return (
-    <div className="hero">
-      <div className="decor1"></div>
-      <div className="decor2"></div>
-      <div className="hero_description">
-        <h2>
-          Al <span className="main_word">vostro</span> fianco per un assistenza fiscale
-          <br />
-          tributaria e del lavoro completa ed integrata
-        </h2>
-        <h3>
-          Lo studio PDM aiuta i clienti a generare valore a lungo termine attraverso un approccio multidisciplinare.
-          <br />
-          Forniamo, infatti, soluzioni complete e su misura supportando le aziende nella gestione efficiente e<br />
-          assistendole nel raggiungimento degli obbiettivi prefissati.
-        </h3>
-        <a href="#services" className="btn_default">
-          Scopri i nostri servizi
-        </a>
+    <>
+      <div ref={heroRef} className="hero">
+        <div className="hero_bg"></div>
+        <div className="hero_content">
+          <h2>
+            Al <span>vostro fianco</span> per un assistenza fiscale tributaria e del lavoro completa ed integrata
+          </h2>
+
+          <h3>
+            Lo studio PDM aiuta i clienti a generare valore a lungo termine attraverso un approccio multidisciplinare.
+            Forniamo, infatti, soluzioni complete e su misura supportando le aziende nella gestione efficiente e
+            assistendole nel raggiungimento degli obbiettivi prefissati.
+          </h3>
+
+          <div>
+            <Button btnType="link" text="Scopri subito i nostri servizi" />
+          </div>
+
+          <div className="hero_scroll">
+            <p>Continua a scorrere</p>
+            {svgSelector({ svgName: "mouse", svgWidth: "28px", svgHeight: "28px", svgFill: "#f7f7f7" })}
+          </div>
+
+          <div className="hero_location">
+            {svgSelector({ svgName: "building", svgWidth: "32px", svgHeight: "32px", svgFill: "#c6a163" })}
+            <h6>ROMA</h6>
+          </div>
+        </div>
       </div>
-      <div className="hero_svg">
-        <svg viewBox="0 0 24 24" width="38px" height="38px">
-          <path
-            d="M12,19c-1.049,0-2.036-.409-2.778-1.151l-3.925-3.875c-.393-.388-.397-1.021-.009-1.414,.387-.394,1.021-.396,1.414-.009l3.929,3.88c.737,.737,2.003,.733,2.731,.004l3.935-3.884c.392-.388,1.023-.385,1.414,.009,.388,.393,.384,1.026-.01,1.414l-3.93,3.88c-.736,.738-1.723,1.146-2.772,1.146Zm.706-5.327l5.999-5.964c.392-.389,.394-1.022,.004-1.414-.39-.393-1.022-.395-1.414-.004l-5.294,5.263L6.705,6.291c-.391-.389-1.024-.386-1.415,.004-.389,.392-.387,1.025,.004,1.415l6.001,5.964c.195,.194,.45,.291,.705,.291s.51-.097,.705-.291Z"
-            fill="#c6a163"
-            stroke="#c6a163"
-          />
-        </svg>
-      </div>
-    </div>
+    </>
   );
 }

@@ -29,6 +29,13 @@
   border: 1px solid #fff;
   opacity: 0.25;
   transform: translate(-50%, -50%);
+  animation: rotateAround 15s linear infinite;
+}
+
+@keyframes rotateAround {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .square_cluster {
@@ -139,9 +146,11 @@
 
 @keyframes hide {
   from {
+    filter: blur(15px);
     opacity: 1;
   }
   to {
+    filter: blur(0px);
     opacity: 0;
     user-select: none;
     pointer-events: none;
@@ -149,10 +158,29 @@
 }
 
 .loder_contact {
-  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
 }
 
-.contact_wa_btn_refactor {
-  background-color: transparent;
-  color: #c6a163;
+.loder_contact h2 {
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: normal;
+}
+
+.loder_contact h3 {
+  margin-top: 15px;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: normal;
+}
+
+.loader_contact_links {
+  display: flex;
+  gap: 15px;
+  width: 350px;
+  padding: 30px 0;
 }

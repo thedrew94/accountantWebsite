@@ -1,0 +1,33 @@
+.button_standard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px;
+  color: #c6a163;
+  border: 1px solid #c6a163;
+  border-radius: 13px;
+  background-color: transparent;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  transition: all 0.25s;
+}
+
+.button_standard svg path {
+  transition: all 0.25s;
+}
+
+.button_standard:hover {
+  color: #222633;
+  border: 1px solid #222633;
+  background-color: #c6a163;
+}
+
+.button_standard:hover svg path {
+  fill: #222633;
+}

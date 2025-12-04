@@ -15,20 +15,24 @@ import Sidemenu from "./components/Sidemenu";
 import "./i18n/i18n";
 import "./index.css";
 import "./styles/PageLoader.css";
+import "./styles/Button.css";
+import "./styles/Hero.css";
 import Footer from "./components/Footer";
 import PageLoader from "./components/PageLoader";
+
+import imgtest from "./utils/low-poly-grid-haikei.svg";
+import Button from "./components/Button";
+import { svgSelector } from "./utils/svgSelector";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <PageLoader />
-    <CookieModal />
-    <Sidemenu />
-    <header>
-      <Navbar />
-      <Hero />
-    </header>
-    <InfoOverviewMobile />
-    <InfoOverviewDesktop />
+    <Hero />
+    {/* <InfoOverviewMobile />
+    <InfoOverviewDesktop /> */}
     <main>
       <OurStory />
       <Services />
@@ -38,5 +42,15 @@ createRoot(document.getElementById("root")!).render(
     <NewsSection />
     <Map />
     <Footer />
+
+    {/* <CookieModal />
+    <Sidemenu />
+    <header>
+      <Navbar />
+      <Hero />
+    </header>
+ 
+
+   */}
   </BrowserRouter>
 );
