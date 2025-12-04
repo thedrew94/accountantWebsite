@@ -14,10 +14,13 @@ import Services from "./components/Services";
 import Sidemenu from "./components/Sidemenu";
 import "./i18n/i18n";
 import "./index.css";
+import "./styles/PageLoader.css";
 import Footer from "./components/Footer";
+import PageLoader from "./components/PageLoader";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
+    <PageLoader />
     <CookieModal />
     <Sidemenu />
     <header>
