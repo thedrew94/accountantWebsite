@@ -24,7 +24,7 @@ export default function Navbar({ setSidemenuOpen = () => {} }: Props) {
     <nav className={`main_nav ${isScrolled && "main_nav_blue"}`}>
       <a href="#" className="main_nav_logo">
         {/* <img src="/logo_tras_gold_small.png" alt="" width="50px" /> */}
-        <img src="/logoBlue.png" alt="" draggable="false" />
+        <img src="./logoBlue.png" alt="" draggable="false" />
         {/* <h6>STUDIO PDM</h6> */}
       </a>
       <ul className="main_nav_ul">
