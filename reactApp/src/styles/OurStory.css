@@ -1,0 +1,132 @@
+.introduction {
+  position: relative;
+  margin: 0 auto;
+  width: 1400px;
+  min-height: 500px;
+  padding: 15px 35px;
+  display: grid;
+  grid-template-columns: minmax(380px, 300px) 1fr;
+  gap: 50px;
+}
+
+.introduction_bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 65%);
+  background-color: #222633;
+}
+
+.introduction_img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/building.webp");
+  border-radius: 5px;
+  border: 1px solid rgb(88, 95, 122);
+  transform: translateY(-50px);
+  overflow: hidden;
+}
+
+.introduction_img h6 {
+  display: none;
+}
+
+.introduction_description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 25px 0;
+}
+
+.introduction_description h5 {
+  font-size: 2.8rem;
+  font-family: "Cinzel", serif;
+  font-weight: normal;
+  text-shadow: 2px 2px 4px #222633;
+}
+
+.introduction_description_main {
+  display: flex;
+  gap: 15px;
+}
+
+.introduction_description_main span.decor {
+  font-size: 18rem;
+  line-height: 12rem;
+  text-shadow: 2px 2px 4px #222633;
+  color: #c6a163;
+}
+
+.introduction_description_main h6 {
+  font-size: 1.8rem;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+.text_end {
+  /* display: flex;
+  justify-content: flex-end; */
+  font-family: "Cinzel", serif;
+  font-weight: normal;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+
+@media screen and (max-width: 1250px) {
+}
+
+@media screen and (max-width: 860px) {
+  .introduction {
+    width: fit-content;
+    margin: 0px 10px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .introduction_description_main span.decor {
+    font-size: 10rem;
+    line-height: 8rem;
+    text-shadow: 2px 2px 4px #222633;
+    color: #c6a163;
+  }
+
+  .introduction_img {
+    position: relative;
+    z-index: -1;
+    width: 80%;
+    height: 280px;
+    transform: translateY(0px);
+    margin: 0 auto;
+    box-shadow: 4px 4px 18px 5px #222633;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .introduction_img h6 {
+    font-size: 2.4rem;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 2px 2px 4px #222633;
+  }
+
+  .text_end {
+    display: none;
+  }
+
+  .introduction_description {
+    padding: 25px 10px;
+  }
+}

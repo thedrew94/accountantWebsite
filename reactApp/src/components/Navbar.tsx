@@ -1,13 +1,55 @@
-export default function Navbar() {
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
+
+interface Props {
+  setSidemenuOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function Navbar({ setSidemenuOpen = () => {} }: Props) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // If user scrolled even 10px down → add background
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    // Run on mount + on every scroll
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Cleanup
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="main_nav">
+    <nav className={`main_nav ${isScrolled && "main_nav_blue"}`}>
       <a href="#" className="main_nav_logo">
-        <img src="./assets/logo_tras_gold_small.png" alt="" width="50px" />
-        <h6>STUDIO PDM</h6>
+        {/* <img src="/logo_tras_gold_small.png" alt="" width="50px" /> */}
+        <img src="/logoBlue.png" alt="" draggable="false" />
+        {/* <h6>STUDIO PDM</h6> */}
       </a>
       <ul className="main_nav_ul">
+        {/* <li>
+          <a href="">Chi Siamo</a>
+        </li>
         <li>
-          <button className="dropdown_menu" id="menu_btn">
+          <a href="">I nostri servizi</a>
+        </li>
+        <li>
+          <a href="">Consultazione</a>
+        </li>
+        <li>
+          <a href="">La nostra missione</a>
+        </li>
+        <li>
+          <a href="">Contatti</a>
+        </li> */}
+        <li>
+          <button
+            className="dropdown_menu"
+            onClick={() => {
+              setSidemenuOpen(true);
+            }}
+          >
             <span></span>
             <span></span>
             <span></span>

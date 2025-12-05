@@ -62,6 +62,11 @@ export default function Footer() {
             </a>
           </li>
           <li>
+            <a href="#news" className="menu_link_btn">
+              Blog
+            </a>
+          </li>
+          <li>
             <a href="#footer" className="menu_link_btn">
               Contatti
             </a>

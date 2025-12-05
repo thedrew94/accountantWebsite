@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #f7f7f7;
   background-color: #222633;
   animation: hide 1.5s 2.75s linear forwards;
 }
@@ -168,6 +169,8 @@
 .loder_contact h2 {
   font-size: 4rem;
   line-height: 4rem;
+  font-family: "Cinzel", serif;
+  font-weight: normal;
   font-weight: normal;
 }
 
@@ -183,4 +186,39 @@
   gap: 15px;
   width: 350px;
   padding: 30px 0;
+}
+
+@media screen and (max-width: 1250px) {
+}
+
+@media screen and (max-width: 860px) {
+  .loder_contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+  }
+
+  .loder_contact h2 {
+    margin: 0 15px;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  .loder_contact h3 {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    text-align: center;
+  }
+
+  .loader_contact_links {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    width: 300px;
+    padding: 0px 10px;
+  }
 }

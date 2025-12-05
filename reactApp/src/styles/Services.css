@@ -1,0 +1,128 @@
+.main_title {
+  color: #222633;
+  text-align: center;
+}
+
+.main_title h2 {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.main_title h3 {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+
+.services_ul {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.services_ul li {
+  touch-action: manipulation;
+}
+
+.services_ul li:nth-child(odd) {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 20px 15px 40px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #222633;
+  background-image: url("./assets/bg_noise2.png");
+  background-repeat: repeat;
+  transform: translateX(-35%);
+  opacity: 0;
+  box-shadow: 1px 10px 15px 0px rgba(21, 21, 21, 0.25);
+}
+
+.services_ul li:nth-child(odd).appear_in {
+  animation: enterViewLeftDerray 0.75s ease-out forwards;
+}
+
+@keyframes enterViewLeftDerray {
+  from {
+    transform: translateX(-35%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-3%);
+    opacity: 1;
+  }
+}
+
+.services_ul li:nth-child(even) {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 20px 15px 40px;
+  border: 1px solid #222633;
+  border-radius: 5px;
+  color: #222633;
+  transform: translateX(35%);
+  opacity: 0;
+  box-shadow: 1px 10px 15px 0px rgba(21, 21, 21, 0.25);
+}
+
+.services_ul li:nth-child(even).appear_in {
+  animation: enterViewRightDerray 0.75s ease-out forwards;
+}
+
+@keyframes enterViewRightDerray {
+  from {
+    transform: translateX(35%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(3%);
+    opacity: 1;
+  }
+}
+
+#services,
+#job_safety,
+#introduction,
+#consultation,
+#footer {
+  /* Offset from the top */
+  scroll-margin-top: 100px;
+}
+
+.services_ul li::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: -5%;
+  width: 30%;
+  border: 3px solid #d6d6d6;
+  border-radius: 5px;
+  transition: all 0.25s;
+}
+
+.services_li_numb {
+  font-size: 4rem;
+  line-height: 2.4rem;
+  color: goldenrod;
+}
+
+.services_li_body h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.services_li_body p {
+  margin-top: 20px;
+  font-size: 1.7rem;
+  font-weight: normal;
+}

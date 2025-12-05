@@ -1,4 +1,5 @@
 .hero {
+  position: relative;
   z-index: 1;
   width: 100%;
   height: 100vh;
@@ -13,14 +14,42 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
   width: 100%;
   height: 100%;
-  background-image: url("/lowpoly.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  z-index: -1;
   opacity: 0.15;
+  pointer-events: none;
+}
+
+.hero_bg svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(2);
+}
+
+.hero_bg svg path:nth-child(even) {
+  /* your styles here */
+  /* fill: #c6a163;
+  stroke: #000000; */
+  transform-origin: center;
+  animation: animateHero 3s ease-in-out infinite;
+}
+
+@keyframes animateHero {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .hero_content {
@@ -149,3 +178,70 @@
 }
 
 /* style={{ width: "100%", height: "100vh", background: "#222633" }} */
+
+@media screen and (max-width: 1250px) {
+}
+
+@media screen and (max-width: 860px) {
+  /* .hero_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 30px;
+  }
+
+  .hero_bg svg {
+  } */
+
+  .hero_bg svg {
+    transform: scale(4);
+  }
+
+  @keyframes animateHero {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .hero h2 {
+    margin: 0 15px;
+    max-width: 400px;
+    font-size: 2.2rem;
+    line-height: 120%;
+  }
+
+  .hero h2 span {
+    padding: 0 6px;
+    border-radius: 2px;
+  }
+
+  .hero h3 {
+    margin: 0 15px;
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 140%;
+  }
+
+  .hero_scroll {
+    bottom: 100px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .hero_scroll p {
+    right: -50px;
+    height: 140%;
+    font-size: 1.6rem;
+    line-height: 110%;
+    font-weight: 200;
+    letter-spacing: 0.05em;
+  }
+}
