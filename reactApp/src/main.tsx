@@ -13,10 +13,10 @@ import "./styles/OurStory.css";
 import "./styles/PageLoader.css";
 import "./styles/Services.css";
 import "./styles/Sidemenu.css";
-
+import App from "./App";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import App from "./app";
+
 gsap.registerPlugin(ScrollTrigger);
 
 createRoot(document.getElementById("root")!).render(

@@ -1,9 +1,8 @@
 import { svgSelector } from "../utils/svgSelector";
 import Button from "./Button";
 
-import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
 import { useRef } from "react";
 
 export default function Hero() {

@@ -5,7 +5,7 @@ export default function Services() {
     // Create an Intersection Observer
     const servicesLi = document.querySelectorAll(".services_li");
     const observer = new IntersectionObserver(
-      (entries, observer) => {
+      (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // Add the class when the element is in view

@@ -8,6 +8,7 @@ interface Props {
   cbFunc?: () => void;
 }
 
+// @ts-ignore
 export default function Button({ btnType = "button", text = "", href = "", icon = null, cbFunc = () => {} }: Props) {
   return btnType === "button" ? (
     <button className="button_standard">{text}</button>

@@ -6,6 +6,7 @@ interface Props {
   style?: React.CSSProperties;
 }
 
+// @ts-ignore
 export function svgSelector({ svgName = "", svgWidth = "", svgHeight = "", svgFill = "", style = {} }: Props) {
   switch (svgName) {
     case "pdf":
