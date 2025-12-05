@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="new_footer" id="footer">
       <div className="footer_left_area">
         <div className="footer_logo">
-          <img src="./assets/logoBlue.png" alt="" width="300px" draggable="false" />
+          <img src="/logoBlue.png" alt="" width="300px" draggable="false" />
         </div>
         <ul className="footer_social">
           <li>
@@ -114,7 +114,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <small className="copyright">&copy; 2025 Studio PDM. All rights reserved.</small>
+      {/* <small className="copyright">&copy; 2025 Studio PDM. All rights reserved.</small> */}
     </footer>
   );
 }

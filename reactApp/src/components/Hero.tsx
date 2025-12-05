@@ -17,9 +17,10 @@ export default function Hero() {
       scrollTrigger: {
         trigger: hero,
         start: "top top",
-        end: "+=600",
+        end: "+=1000",
         scrub: 1,
         pin: true,
+        pinSpacing: false,
         anticipatePin: 1,
       },
     });
@@ -39,16 +40,13 @@ export default function Hero() {
           scale: 0.9,
           ease: "none",
         },
-        0
+        0.3
       )
-      .to(
-        "main",
-        {
-          y: "-60vh",
-          ease: "none",
-        },
-        0
-      );
+      .to("main", {
+        yPercent: "-100vh",
+        ease: "none",
+        scale: 1,
+      });
 
     tl.to(
       hero,

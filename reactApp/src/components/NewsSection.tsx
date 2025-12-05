@@ -1,3 +1,6 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+
 export default function NewsSection() {
   return (
     <div className="news">
@@ -47,7 +50,40 @@ export default function NewsSection() {
         </ul>
       </div>
 
-      <div className="swiper news_swiper">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay, EffectFade]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 4000 }}
+        loop
+        effect="fade"
+        className="h-[500px] rounded-xl"
+      >
+        <SwiperSlide className="swiper-slide">
+          <div className="swiper_slide_inner">
+            <div className="news_swiper_main_img">
+              <img src="./assets/bg3.webp" alt="" />
+            </div>
+            <div className="news_slide_info">
+              <div>
+                <span className="news_slide_date">22/12/2025</span>
+                <h2>Come compilare il 730</h2>
+              </div>
+              <div className="news_slide_author">
+                <img src="./assets/bg.webp" alt="" width="28px" height="28px" />
+                <div>
+                  <h6>Commercialista</h6>
+                  <h5>Pasquale de Martino</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+
+      {/* <div className="swiper news_swiper">
         <div className="swiper-wrapper">
           <div className="swiper-slide">
             <div className="swiper_slide_inner">
@@ -117,7 +153,7 @@ export default function NewsSection() {
           </div>
           <div className="swiper-pagination"></div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

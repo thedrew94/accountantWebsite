@@ -32,7 +32,10 @@ export default function PageLoader() {
         </div>
       </div>
       <div className="loder_contact">
-        <h2>STUDIO PDM PASQUALE DE MARTINO</h2>
+        <h2>
+          STUDIO PDM <br />
+          PASQUALE DE MARTINO
+        </h2>
         <h3>Al vostro fianco per un assistenza fiscale tributaria e del lavoro completa ed integrata</h3>
         <div className="loader_contact_links">
           <Button

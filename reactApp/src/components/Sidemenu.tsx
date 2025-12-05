@@ -68,7 +68,7 @@ export default function Sidemenu({ sidemenuOpen = false, setSidemenuOpen = () =>
             <Button
               btnType="link"
               text="Scarica la Brochure"
-              icon={"email"}
+              icon={"pdf"}
               href="https://wa.me/+393477130964?text=Ciao%2C%20vorrei%20maggiori%20informazioni%20per%20i%20vostri%20servizi%20di%20consulenza"
             />
           </div>

@@ -10,7 +10,7 @@ export default function Navbar({ setSidemenuOpen = () => {} }: Props) {
   useEffect(() => {
     const handleScroll = () => {
       // If user scrolled even 10px down → add background
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 400);
     };
 
     // Run on mount + on every scroll

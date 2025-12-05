@@ -1,17 +1,23 @@
 .main_title {
+  margin-top: 50px;
+  padding: 0 15px;
   color: #222633;
-  text-align: center;
 }
 
 .main_title h2 {
-  font-weight: bold;
-  font-size: 3rem;
+  font-size: 4rem;
+  line-height: 4rem;
+  font-family: "Cinzel", serif;
+  font-weight: normal;
+  text-align: center;
 }
 
 .main_title h3 {
-  margin-top: 1.5rem;
-  font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2rem;
+  line-height: 110%;
+  font-family: "Cinzel", serif;
+  font-weight: normal;
+  text-align: center;
 }
 
 .services_ul {
@@ -23,7 +29,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 60px;
 }
 
 .services_ul li {
@@ -117,12 +123,117 @@
 }
 
 .services_li_body h2 {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.8rem;
+  line-height: 2.8rem;
+  font-weight: normal;
+  font-family: "Cinzel", serif;
 }
 
 .services_li_body p {
-  margin-top: 20px;
-  font-size: 1.7rem;
-  font-weight: normal;
+  margin-top: 30px;
+  font-size: 1.8rem;
+  line-height: 130%;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+@media screen and (max-width: 1250px) {
+}
+
+@media screen and (max-width: 860px) {
+  .services_ul {
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .services_ul li:nth-child(odd) {
+    gap: 30px;
+    padding: 20px 10px 80px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: #222633;
+    background-image: url("/bg_noise2.png");
+  }
+
+  @keyframes enterViewLeftDerray {
+    from {
+      transform: translateX(-35%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(-0%);
+      opacity: 1;
+    }
+  }
+
+  .services_ul li:nth-child(even) {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 20px 15px 80px;
+    border: 1px solid #222633;
+    border-radius: 5px;
+    color: #222633;
+    transform: translateX(35%);
+    opacity: 0;
+    box-shadow: 1px 10px 15px 0px rgba(21, 21, 21, 0.25);
+  }
+
+  .services_ul li:nth-child(even).appear_in {
+    animation: enterViewRightDerray 0.75s ease-out forwards;
+  }
+
+  @keyframes enterViewRightDerray {
+    from {
+      transform: translateX(35%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(3%);
+      opacity: 1;
+    }
+  }
+
+  #services,
+  #job_safety,
+  #introduction,
+  #consultation,
+  #footer {
+    /* Offset from the top */
+    scroll-margin-top: 100px;
+  }
+
+  .services_ul li::before {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: -5%;
+    width: 30%;
+    border: 3px solid #d6d6d6;
+    border-radius: 5px;
+    transition: all 0.25s;
+  }
+
+  .services_li_numb {
+    font-size: 4rem;
+    line-height: 2.4rem;
+    color: goldenrod;
+  }
+
+  .services_li_body h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .services_li_body p {
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
 }
