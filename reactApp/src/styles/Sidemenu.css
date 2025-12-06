@@ -16,10 +16,41 @@
   color: #f7f7f7;
   /* 343b52 */
   /* background-color: #222633; */
-  background: #343b52;
-  background: radial-gradient(circle, rgba(52, 59, 82, 0.35) 0%, #222633 100%);
+  /* background: #343b52;
+  background: radial-gradient(circle, rgba(52, 59, 82, 0.25) 0%, #222633 100%); */
   pointer-events: none;
   transform: translate(-50%, -50%);
+}
+
+.sidemenu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(52, 59, 82, 1) 0%, #222633 100%);
+  opacity: 0; /* Start hidden */
+  pointer-events: none; /* Ensure it doesn't block interactions */
+  animation: fadeInGradient 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+  /* Delay 0.3s to start after scale begins, same elastic easing */
+}
+
+.sidemenu.visible::before {
+  /* No need for extra here — the animation handles it */
+  /* Removing .visible will reverse the animation smoothly if you add animation-fill-mode: both; globally if needed */
+}
+
+@keyframes fadeInGradient {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1.1; /* Slight overshoot for extra "sticky" bloom */
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .sidemenu.visible {
@@ -49,8 +80,8 @@
     /* filter: blur(0px); */
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-    background: #343b52;
-    background: radial-gradient(circle, rgba(52, 59, 82, 1) 0%, #222633 100%);
+    /* background: #343b52;
+    background: radial-gradient(circle, rgba(52, 59, 82, 1) 0%, #222633 100%); */
   }
 }
 

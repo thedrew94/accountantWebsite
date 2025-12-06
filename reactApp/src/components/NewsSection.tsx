@@ -64,7 +64,7 @@ export default function NewsSection() {
         <SwiperSlide className="swiper-slide">
           <div className="swiper_slide_inner">
             <div className="news_swiper_main_img">
-              <img src="./assets/bg3.webp" alt="" />
+              <img src="../assets/bg3.webp" alt="" />
             </div>
             <div className="news_slide_info">
               <div>
@@ -72,7 +72,7 @@ export default function NewsSection() {
                 <h2>Come compilare il 730</h2>
               </div>
               <div className="news_slide_author">
-                <img src="./assets/bg.webp" alt="" width="28px" height="28px" />
+                <img src="../assets/bg.webp" alt="" width="28px" height="28px" />
                 <div>
                   <h6>Commercialista</h6>
                   <h5>Pasquale de Martino</h5>

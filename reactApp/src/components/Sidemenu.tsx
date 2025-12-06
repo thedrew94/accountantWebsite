@@ -73,7 +73,7 @@ export default function Sidemenu({ sidemenuOpen = false, setSidemenuOpen = () =>
             />
           </div>
         </div>
-        {/* <img className="sidemenu_logo" src="/logoBlue.png" alt="" draggable="false" /> */}
+        {/* <img className="sidemenu_logo" src="../logoBlue.png" alt="" draggable="false" /> */}
       </div>
     </div>
   );
