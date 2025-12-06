@@ -39,13 +39,17 @@ export default function Hero() {
           scale: 0.9,
           ease: "none",
         },
-        0.3
+        0
       )
-      .to("main", {
-        yPercent: "-100vh",
-        ease: "none",
-        scale: 1,
-      });
+      .to(
+        "main",
+        {
+          yPercent: "-100vh",
+          ease: "none",
+          scale: 1,
+        },
+        0
+      );
 
     tl.to(
       hero,
