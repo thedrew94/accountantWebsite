@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
-import img3 from "../assets/bg3.webp";
 
 export default function NewsSection() {
   return (
@@ -63,7 +62,7 @@ export default function NewsSection() {
           <SwiperSlide className="news_swiper_slide">
             <div className="swiper_slide_inner">
               <div className="news_swiper_main_img">
-                <img src={img3} alt="" />
+                <img src="./bg3.webp" alt="" />
               </div>
               <div className="news_slide_info">
                 <div>
@@ -83,7 +82,7 @@ export default function NewsSection() {
           <SwiperSlide className="news_swiper_slide">
             <div className="swiper_slide_inner">
               <div className="news_swiper_main_img">
-                <img src={img3} alt="" />
+                <img src="./bg3.webp" alt="" />
               </div>
               <div className="news_slide_info">
                 <div>
@@ -103,7 +102,7 @@ export default function NewsSection() {
           <SwiperSlide className="news_swiper_slide">
             <div className="swiper_slide_inner">
               <div className="news_swiper_main_img">
-                <img src={img3} alt="" />
+                <img src="./bg3.webp" alt="" />
               </div>
               <div className="news_slide_info">
                 <div>
