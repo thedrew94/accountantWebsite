@@ -26,9 +26,9 @@ export default function App() {
         <OurStory />
         <Services />
         <OurMission />
-        <EstimationCalculator />
-        <NewsSection />
       </main>
+      <EstimationCalculator />
+      <NewsSection />
 
       <Map />
       <Footer />

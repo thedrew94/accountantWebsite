@@ -242,7 +242,7 @@ export default function Hero() {
           </h3>
 
           <div>
-            <Button btnType="link" text="Scopri subito i nostri servizi" />
+            <Button btnType="link" text="Scopri subito i nostri servizi" href={"#services"} />
           </div>
 
           <div className="hero_scroll">

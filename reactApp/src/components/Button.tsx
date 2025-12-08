@@ -6,14 +6,29 @@ interface Props {
   href?: string;
   icon?: string | null;
   cbFunc?: () => void;
+  btnStyle?: "normal" | "inverted";
 }
 
 // @ts-ignore
-export default function Button({ btnType = "button", text = "", href = "", icon = null, cbFunc = () => {} }: Props) {
+export default function Button({
+  btnType = "button",
+  text = "",
+  href = "",
+  icon = null,
+  cbFunc = () => {},
+  btnStyle = "normal",
+}: Props) {
   return btnType === "button" ? (
-    <button className="button_standard">{text}</button>
+    <button
+      className={`button_default ${btnStyle === "normal" ? "button_normal" : "button_inverted"}`}
+      onClick={() => {
+        cbFunc();
+      }}
+    >
+      {text}
+    </button>
   ) : (
-    <a href="#" className="button_standard">
+    <a href={href} className={`button_default ${btnStyle === "normal" ? "button_normal" : "button_inverted"}`}>
       {icon && svgSelector({ svgName: icon, svgWidth: "18px", svgHeight: "18px", svgFill: "#c6a163" })}
       <p>{text}</p>
     </a>

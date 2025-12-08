@@ -71,6 +71,26 @@
 }
 
 @media screen and (max-width: 860px) {
+  .main_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 130px;
+    padding: 0 25px;
+    background-color: transparent;
+    transition: all 0.5s;
+  }
+
+  .main_nav_blue {
+    height: 80px;
+    background-color: #222633;
+  }
+
   .main_nav_logo img {
     width: 200px;
   }

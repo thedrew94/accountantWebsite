@@ -231,7 +231,7 @@
   }
 
   .hero_scroll {
-    bottom: 100px;
+    bottom: 120px;
     width: 60px;
     height: 60px;
   }
@@ -243,5 +243,9 @@
     line-height: 110%;
     font-weight: 200;
     letter-spacing: 0.05em;
+  }
+
+  .hero_location {
+    bottom: 60px;
   }
 }

@@ -3,18 +3,29 @@
   z-index: 1;
   width: 100%;
   height: 425px;
-  background-image: url("../bg3.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  z-index: 2;
+  /* gap: 25px;
+  transition: all 1.25s; */
 }
 
-.consultation::before {
+.consultation_inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  --top-offset: 0px;
+  overflow: hidden;
+}
+
+.consultation_inner::after {
   position: absolute;
   content: "";
   z-index: -1;
@@ -22,187 +33,198 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(29, 34, 49, 0.65);
+  background-color: rgba(29, 34, 49, 0.75);
+  backdrop-filter: blur(0px);
 }
 
-.consultation_steps {
+.consultation_inner::before {
   position: absolute;
-  z-index: 2;
-  top: 20px;
-  right: 20px;
+  content: "";
+  z-index: -2;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 15px;
+  height: 100%;
+  /* width: 100vw;
+  height: 100vh; */
+  background-image: url("../bg3.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
-.consultation_steps button {
-  width: 50px;
-  height: 30px;
-  display: flex;
+.consultation_inner.fullscreen {
+  position: fixed;
+  top: var(--top-offset);
+  left: 0;
+  width: 100%;
+  height: 425px;
+  animation: goFullscreen 0.25s linear forwards;
+}
+
+.consultation_inner.fullscreen::after {
+  backdrop-filter: blur(10px);
+}
+
+@keyframes goFullscreen {
+  0% {
+    top: var(--top-offset);
+    height: 425px;
+  }
+  100% {
+    top: 0;
+    height: 100vh;
+  }
+}
+
+.calculator_start_btn button {
+  width: 330px;
   justify-content: center;
-  align-items: center;
-  border: 1px solid #585f7a;
-  border-radius: 10px;
-  background-color: #222633;
-  color: #585f7a;
-  font-family: serif;
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 2px 2px 2px 0px rgb(34, 38, 51, 0.75);
+  font-size: 2.2rem;
+  line-height: 2.8rem;
 }
 
-.consultation_steps button.consultation_steps_sltd {
-  border: 1px solid #222633;
-  background-color: #c6a163;
-  color: #222633;
+.preventivo_form {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr minmax(250px, 250px);
+  gap: 50px;
+  color: #f7f7f7;
+  opacity: 0;
+  animation: enterIntoView 0.45s ease-out forwards;
+  animation-delay: 0.25s;
 }
 
-/* Container for the select (optional, for layout control) */
-.select-container {
+.preventivo_form_inputs {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 15px;
-}
-
-/* Label styling (if used) */
-label[for="regime-select"],
-label[for="regime-number"] {
-  text-align: center;
-  font-size: 2.6rem;
-  letter-spacing: 0.05em;
-  font-weight: normal;
-  color: #fff;
-}
-
-/* Styling the select element */
-#regime-select,
-#regime-number {
-  width: 350px;
-  padding: 15px;
-  border: 1px solid #222633;
-  border-radius: 5px;
-  background-color: #d6d6d6;
-  color: #222633;
-  box-shadow: 2px 2px 2px 0px rgb(34, 38, 51, 0.75);
-  font-size: 1.7rem;
-  font-weight: normal;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 12l-6-6h12l-6 6z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-}
-
-#regime-number {
-  background-image: none;
-}
-
-/* Focus and hover states */
-#regime-select:focus,
-#regime-number:focus,
-.fieldset_number input,
-.select-container input {
-  outline: none;
-}
-
-#regime-select:hover,
-#regime-number:focus,
-.fieldset_number input,
-.select-container input {
-  outline: none;
-}
-
-/* Styling the options (limited control) */
-#regime-select option,
-#regime-number option {
-  font-size: 1.4rem;
-  color: inherit;
-  background-color: #d6d6d6;
-}
-
-/* Styling the disabled option (placeholder) */
-#regime-select option:disabled,
-#regime-number option:disabled {
-  color: #222633;
-  background-color: #363c50;
-}
-
-.fieldset_number {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 20px;
 }
 
-.fieldset_number input,
-.select-container input {
-  width: 125px;
-  padding: 15px;
-  border: 1px solid #222633;
-  border-radius: 5px;
-  background-color: #d6d6d6;
-  color: #222633;
-  box-shadow: 2px 2px 2px 0px rgb(34, 38, 51, 0.75);
-  font-size: 1.7rem;
-  font-weight: normal;
-  /* appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none; */
-}
-
-.select-container input {
-  width: 350px;
-  padding: 15px;
-}
-
-.first_step,
-.second_step,
-.third_step,
-.fourth_step {
-  display: none;
+.fieldset_type1 {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 15px;
 }
 
-.second_step_inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
+.fieldset_type1:focus-within .fieldset_type1 label {
+  color: red;
 }
 
-.step_visible {
-  display: flex;
+@keyframes enterIntoView {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.consultation h2 {
-  text-align: center;
-  font-size: 2.6rem;
-  letter-spacing: 0.05em;
-  font-weight: normal;
-}
-
-.consultation_btn_start {
-  width: 250px;
-  padding: 15px;
-  border: 1px solid #222633;
-  /* text-shadow: 2px 2px 4px #222633; */
-  border-radius: 5px;
-  background-color: #c6a163;
-  color: #222633;
-  font-size: 1.7rem;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: 2px 2px 2px 0px rgb(34, 38, 51, 0.75);
+.fieldset_type1 label {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 1.9rem;
+  line-height: 100%;
+  font-weight: 300;
+  color: #f7f7f7;
+  transform: translateY(165%);
   transition: all 0.25s;
+  pointer-events: none;
+}
+
+.fieldset_type1 label.move_up {
+  transform: translateY(0%);
+}
+
+.fieldset_type1 input {
+  width: 100%;
+  padding: 10px 0;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #f7f7f7;
+  background-color: transparent;
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  line-height: 100%;
+  font-weight: normal;
+  color: #f7f7f7;
+  transition: all 0.25s;
+}
+
+.fieldset_type1 input:focus {
+  border-bottom: 1px solid #c6a163;
+}
+
+.fieldset_mandatory {
+  margin: 0 10px;
+  color: #c6a163;
+}
+
+.preventivo_form_actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 15px;
+  width: 100%;
+}
+
+.preventivo_form_actions button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 1250px) {
+}
+
+@media screen and (max-width: 860px) {
+  .preventivo_form {
+    margin-top: 125px;
+  }
+
+  .calculator_start_btn button {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    padding: 20px 25px;
+  }
+
+  .preventivo_form {
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    padding: 0px 15px 15px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .preventivo_form_inputs {
+    gap: 15px;
+  }
+
+  .fieldset_type1 label {
+    font-size: 1.6rem;
+  }
+
+  .fieldset_type1 input {
+    font-size: 1.7rem;
+  }
+
+  .preventivo_form_actions {
+    gap: 10px;
+  }
+
+  .preventivo_form_actions button {
+    padding: 15px;
+    text-align: center;
+  }
 }

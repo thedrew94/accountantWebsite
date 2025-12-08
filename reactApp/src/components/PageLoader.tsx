@@ -1,26 +1,26 @@
-import { useEffect, useRef } from "react";
+// import { useEffect, useRef } from "react";
 import Button from "./Button";
 
 export default function PageLoader() {
-  const loaderRef = useRef<HTMLDivElement>(null);
+  // const loaderRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const loader = loaderRef.current;
-    if (!loader) return;
+  // useEffect(() => {
+  //   const loader = loaderRef.current;
+  //   if (!loader) return;
 
-    function handleAnimationEnd(event: AnimationEvent) {
-      if (event.animationName === "hide") {
-        console.log("Loader hide animation finished!");
-      }
-    }
-    loader.addEventListener("animationend", handleAnimationEnd);
-    return () => {
-      loader.removeEventListener("animationend", handleAnimationEnd);
-    };
-  }, []);
+  //   function handleAnimationEnd(event: AnimationEvent) {
+  //     if (event.animationName === "hide") {
+  //       console.log("Loader hide animation finished!");
+  //     }
+  //   }
+  //   loader.addEventListener("animationend", handleAnimationEnd);
+  //   return () => {
+  //     loader.removeEventListener("animationend", handleAnimationEnd);
+  //   };
+  // }, []);
 
   return (
-    <div ref={loaderRef} className="page_loader">
+    <div className="page_loader">
       <div className="page_loader_component">
         <div className="page_loader_component_outter"></div>
         <div className="moving_load_square"></div>

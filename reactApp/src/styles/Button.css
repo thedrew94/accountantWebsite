@@ -1,14 +1,11 @@
-.button_standard {
+.button_default {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
   width: 100%;
   padding: 15px;
-  color: #c6a163;
-  border: 1px solid #c6a163;
-  border-radius: 13px;
-  background-color: transparent;
+  border-radius: 10px;
   font-size: 1.6rem;
   line-height: 1.6rem;
   text-align: center;
@@ -18,16 +15,28 @@
   transition: all 0.25s;
 }
 
-.button_standard svg path {
-  transition: all 0.25s;
+.button_normal {
+  color: #c6a163;
+  border: 1px solid #c6a163;
+  background-color: transparent;
 }
 
-.button_standard:hover {
+.button_inverted {
   color: #222633;
   border: 1px solid #222633;
   background-color: #c6a163;
 }
 
-.button_standard:hover svg path {
+.button_default svg path {
+  transition: all 0.25s;
+}
+
+.button_default:hover {
+  color: #222633;
+  border: 1px solid #222633;
+  background-color: #c6a163;
+}
+
+.button_default:hover svg path {
   fill: #222633;
 }
