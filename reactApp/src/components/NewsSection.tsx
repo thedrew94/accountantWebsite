@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import img3 from "../assets/bg3.webp";
 
 export default function NewsSection() {
   return (
@@ -50,38 +51,101 @@ export default function NewsSection() {
         </ul>
       </div>
 
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay, EffectFade]}
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 4000 }}
-        loop
-        effect="fade"
-        className="h-[500px] rounded-xl"
-      >
-        <SwiperSlide className="swiper-slide">
-          <div className="swiper_slide_inner">
-            <div className="news_swiper_main_img">
-              <img src="../assets/bg3.webp" alt="" />
-            </div>
-            <div className="news_slide_info">
-              <div>
-                <span className="news_slide_date">22/12/2025</span>
-                <h2>Come compilare il 730</h2>
+      <div className="news_swiper_container">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, EffectFade]}
+          spaceBetween={0}
+          slidesPerView={1}
+          // autoplay={{ delay: 2000, disableOnInteraction: false }}
+          loop
+          className="news_swiper"
+        >
+          <SwiperSlide className="news_swiper_slide">
+            <div className="swiper_slide_inner">
+              <div className="news_swiper_main_img">
+                <img src={img3} alt="" />
               </div>
-              <div className="news_slide_author">
-                <img src="../assets/bg.webp" alt="" width="28px" height="28px" />
+              <div className="news_slide_info">
                 <div>
-                  <h6>Commercialista</h6>
-                  <h5>Pasquale de Martino</h5>
+                  <span className="news_slide_date">22/12/2025</span>
+                  <h2>Come compilare il 730</h2>
+                </div>
+                <div className="news_slide_author">
+                  <img src="./assets/bg.webp" alt="" width="28px" height="28px" />
+                  <div>
+                    <h6>Commercialista</h6>
+                    <h5>Pasquale de Martino</h5>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+          </SwiperSlide>
+          <SwiperSlide className="news_swiper_slide">
+            <div className="swiper_slide_inner">
+              <div className="news_swiper_main_img">
+                <img src={img3} alt="" />
+              </div>
+              <div className="news_slide_info">
+                <div>
+                  <span className="news_slide_date">22/12/2025</span>
+                  <h2>Come compilare il 730</h2>
+                </div>
+                <div className="news_slide_author">
+                  <img src="./assets/bg.webp" alt="" width="28px" height="28px" />
+                  <div>
+                    <h6>Commercialista</h6>
+                    <h5>Pasquale de Martino</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="news_swiper_slide">
+            <div className="swiper_slide_inner">
+              <div className="news_swiper_main_img">
+                <img src={img3} alt="" />
+              </div>
+              <div className="news_slide_info">
+                <div>
+                  <span className="news_slide_date">22/12/2025</span>
+                  <h2>Come compilare il 730</h2>
+                </div>
+                <div className="news_slide_author">
+                  <img src="./assets/bg.webp" alt="" width="28px" height="28px" />
+                  <div>
+                    <h6>Commercialista</h6>
+                    <h5>Pasquale de Martino</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        {/* <Swiper
+          // modules={[Navigation, Pagination, Autoplay, EffectFade]}
+          spaceBetween={0}
+          slidesPerView={1}
+          // navigation
+          // pagination={{ clickable: true }}
+          autoplay={{ delay: 2000 }}
+          loop
+          className="news_swiper"
+          style={{ height: "100%", width: "100%" }}
+        >
+          <SwiperSlide className="news_swiper_slide">
+            <div className="news_swiper_slide_inner">
+              <p>wewewew</p>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide className="news_swiper_slide">
+            <div className="news_swiper_slide_inner">
+              <p>Slide 2 content</p>
+            </div>
+          </SwiperSlide>
+
+        </Swiper> */}
+      </div>
 
       {/* <div className="swiper news_swiper">
         <div className="swiper-wrapper">

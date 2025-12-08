@@ -8,8 +8,8 @@ interface Props {
 
 export default function Sidemenu({ sidemenuOpen = false, setSidemenuOpen = () => {} }: Props) {
   return (
-    <div className={`sidemenu ${sidemenuOpen && "visible"}`}>
-      <div className="sidemenu_inner">
+    <div className={`sidemenu ${sidemenuOpen ? "visible" : ""}`}>
+      <div className={`sidemenu_inner ${sidemenuOpen ? "visible" : ""}`}>
         <ul>
           <li>
             <a href="#" className="menu_link_btn">
