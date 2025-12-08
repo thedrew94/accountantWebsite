@@ -79,13 +79,15 @@ export default function EstimationCalculator() {
           <form className="preventivo_form">
             <div className="preventivo_form_inputs">
               <fieldset className="fieldset_type1">
-                <label htmlFor="" className={`${formData[0].expanded && "move_up"}`}>
+                <label htmlFor="full-name" className={`${formData[0].expanded && "move_up"}`}>
                   Nome e Cognome<span className="fieldset_mandatory">*</span>
                 </label>
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  id="full-name"
+                  name="full_name"
+                  placeholder=""
+                  autoComplete="name"
                   value={formData[0].value}
                   onChange={(e) => {
                     handleInputChange({ event: e, inputIdx: 0 });
@@ -93,78 +95,96 @@ export default function EstimationCalculator() {
                 />
               </fieldset>
               <fieldset className="fieldset_type1">
-                <label htmlFor="" className={`${formData[1].expanded && "move_up"}`}>
+                <label htmlFor="company-name" className={`${formData[1].expanded && "move_up"}`}>
                   Ragione Sociale
                 </label>
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  id="company-name"
+                  name="company_name"
+                  placeholder=""
+                  autoComplete="organization"
+                  value={formData[1].value}
                   onChange={(e) => {
                     handleInputChange({ event: e, inputIdx: 1 });
                   }}
                 />
               </fieldset>
               <fieldset className="fieldset_type1">
-                <label htmlFor="" className={`${formData[2].expanded && "move_up"}`}>
+                <label htmlFor="tax-regime" className={`${formData[2].expanded && "move_up"}`}>
                   Tipologio Regime
                 </label>
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  id="tax-regime"
+                  name="tax_regime"
+                  placeholder=""
+                  autoComplete="off"
+                  value={formData[2].value}
                   onChange={(e) => {
                     handleInputChange({ event: e, inputIdx: 2 });
                   }}
                 />
               </fieldset>
               <fieldset className="fieldset_type1">
-                <label htmlFor="" className={`${formData[3].expanded && "move_up"}`}>
+                <label htmlFor="employees" className={`${formData[3].expanded && "move_up"}`}>
                   Numero dipendenti
                 </label>
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  id="employees"
+                  name="employees"
+                  placeholder=""
+                  autoComplete="off"
+                  value={formData[3].value}
                   onChange={(e) => {
                     handleInputChange({ event: e, inputIdx: 3 });
                   }}
                 />
               </fieldset>
               <fieldset className="fieldset_type1">
-                <label htmlFor="" className={`${formData[4].expanded && "move_up"}`}>
+                <label htmlFor="phone" className={`${formData[4].expanded && "move_up"}`}>
                   Telefono<span className="fieldset_mandatory">*</span>
                 </label>
                 <input
-                  type="text"
-                  name=""
-                  id=""
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder=""
+                  autoComplete="tel"
+                  value={formData[4].value}
                   onChange={(e) => {
                     handleInputChange({ event: e, inputIdx: 4 });
                   }}
                 />
               </fieldset>
               <fieldset className="fieldset_type1">
-                <label htmlFor="" className={`${formData[5].expanded && "move_up"}`}>
+                <label htmlFor="email" className={`${formData[5].expanded && "move_up"}`}>
                   Email<span className="fieldset_mandatory">*</span>
                 </label>
                 <input
-                  type="text"
-                  name=""
-                  id=""
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder=""
+                  autoComplete="email"
+                  value={formData[5].value}
                   onChange={(e) => {
                     handleInputChange({ event: e, inputIdx: 5 });
                   }}
                 />
               </fieldset>
               <fieldset className="fieldset_type1">
-                <label htmlFor="" className={`${formData[6].expanded && "move_up"}`}>
+                <label htmlFor="message" className={`${formData[6].expanded && "move_up"}`}>
                   Messaggio<span className="fieldset_mandatory">*</span>
                 </label>
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  id="message"
+                  name="message"
+                  placeholder=""
+                  autoComplete="off"
+                  value={formData[6].value}
                   onChange={(e) => {
                     handleInputChange({ event: e, inputIdx: 6 });
                   }}

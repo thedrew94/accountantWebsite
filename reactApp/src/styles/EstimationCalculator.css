@@ -61,6 +61,7 @@
   width: 100%;
   height: 425px;
   animation: goFullscreen 0.25s linear forwards;
+  overflow: hidden;
 }
 
 .consultation_inner.fullscreen::after {
@@ -88,7 +89,8 @@
 .preventivo_form {
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
+  height: 1200px;
+  margin: 125px auto 0;
   padding: 50px;
   display: grid;
   grid-template-columns: 1fr minmax(250px, 250px);
@@ -97,9 +99,11 @@
   opacity: 0;
   animation: enterIntoView 0.45s ease-out forwards;
   animation-delay: 0.25s;
+  overflow: auto;
 }
 
 .preventivo_form_inputs {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -109,10 +113,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.fieldset_type1:focus-within .fieldset_type1 label {
-  color: red;
 }
 
 @keyframes enterIntoView {
@@ -186,10 +186,6 @@
 }
 
 @media screen and (max-width: 860px) {
-  .preventivo_form {
-    margin-top: 125px;
-  }
-
   .calculator_start_btn button {
     width: 100%;
     justify-content: center;
@@ -202,7 +198,8 @@
     width: 100%;
     max-width: 600px;
     height: 100%;
-    padding: 0px 15px 15px;
+    margin: 125px 0 125px;
+    padding: 0 15px 150px;
     grid-template-columns: 1fr;
     gap: 15px;
   }
@@ -220,7 +217,11 @@
   }
 
   .preventivo_form_actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     gap: 10px;
+    padding: 15px;
   }
 
   .preventivo_form_actions button {

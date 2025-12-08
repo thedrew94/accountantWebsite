@@ -9,7 +9,6 @@ export default function Navbar({ setSidemenuOpen = () => {} }: Props) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // If user scrolled even 10px down → add background
       setIsScrolled(window.scrollY > 400);
     };
 
@@ -28,21 +27,6 @@ export default function Navbar({ setSidemenuOpen = () => {} }: Props) {
         {/* <h6>STUDIO PDM</h6> */}
       </a>
       <ul className="main_nav_ul">
-        {/* <li>
-          <a href="">Chi Siamo</a>
-        </li>
-        <li>
-          <a href="">I nostri servizi</a>
-        </li>
-        <li>
-          <a href="">Consultazione</a>
-        </li>
-        <li>
-          <a href="">La nostra missione</a>
-        </li>
-        <li>
-          <a href="">Contatti</a>
-        </li> */}
         <li>
           <button
             className="dropdown_menu"

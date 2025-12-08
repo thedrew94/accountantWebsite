@@ -1,7 +1,7 @@
 import { svgSelector } from "../utils/svgSelector";
 
 interface Props {
-  btnType: "button" | "link";
+  btnType: "button" | "link" | "submit" | "download";
   text: string;
   href?: string;
   icon?: string | null;
@@ -20,6 +20,7 @@ export default function Button({
 }: Props) {
   return btnType === "button" ? (
     <button
+      type="button"
       className={`button_default ${btnStyle === "normal" ? "button_normal" : "button_inverted"}`}
       onClick={() => {
         cbFunc();
@@ -27,6 +28,17 @@ export default function Button({
     >
       {text}
     </button>
+  ) : btnType === "download" ? (
+    <a
+      href={href}
+      className={`button_default ${btnStyle === "normal" ? "button_normal" : "button_inverted"}`}
+      download={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {icon && svgSelector({ svgName: icon, svgWidth: "18px", svgHeight: "18px", svgFill: "#c6a163" })}
+      <p>{text}</p>
+    </a>
   ) : (
     <a href={href} className={`button_default ${btnStyle === "normal" ? "button_normal" : "button_inverted"}`}>
       {icon && svgSelector({ svgName: icon, svgWidth: "18px", svgHeight: "18px", svgFill: "#c6a163" })}

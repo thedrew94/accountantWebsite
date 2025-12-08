@@ -73,12 +73,7 @@ export default function Sidemenu({ sidemenuOpen = false, setSidemenuOpen = () =>
               icon="email"
               href="mailto:your-email@example.com" // Fixed: changed from WhatsApp to proper mailto (update with real email)
             />
-            <Button
-              btnType="link"
-              text="Scarica la Brochure"
-              icon="pdf"
-              href="/path-to-your-brochure.pdf" // Fixed: point to actual PDF file
-            />
+            <Button btnType="download" text="Scarica la Brochure" icon="pdf" href="../brochure.pdf" />
           </div>
         </div>
 
