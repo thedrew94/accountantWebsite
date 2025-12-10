@@ -196,6 +196,18 @@
     gap: 5px;
     transform: translateX(-50%);
   }
+
+  .consultation_inner {
+    padding-top: 120px;
+    justify-content: flex-start;
+  }
+
+  .preventivo_form {
+    display: flex;
+    margin: 0;
+    padding: 0 15px;
+    height: calc(100% - 200px);
+  }
 }
 /* .consultation_inner {
     justify-content: flex-start;
