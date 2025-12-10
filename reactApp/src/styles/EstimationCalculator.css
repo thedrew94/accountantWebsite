@@ -200,13 +200,14 @@
   .consultation_inner {
     padding-top: 120px;
     justify-content: flex-start;
+    overflow: visible;
   }
 
   .preventivo_form {
     display: flex;
     margin: 0;
     padding: 0 15px;
-    height: calc(100% - 200px);
+    height: 400px;
   }
 }
 /* .consultation_inner {
