@@ -76,7 +76,7 @@
   }
   100% {
     top: 0;
-    height: 100svh;
+    height: 100vh;
   }
 }
 
@@ -189,9 +189,11 @@
 @media screen and (max-width: 860px) {
   .preventivo_form_actions {
     position: absolute;
+    max-width: 300px;
     z-index: 1;
-    bottom: 0;
+    bottom: 60px;
     left: 50%;
+    gap: 5px;
     transform: translateX(-50%);
   }
 }
