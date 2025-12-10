@@ -188,13 +188,13 @@
 
 @media screen and (max-width: 860px) {
   .preventivo_form_actions {
-    position: absolute;
+    /* position: absolute;
     max-width: 300px;
     z-index: 1;
     bottom: 60px;
     left: 50%;
     gap: 5px;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
   }
 
   .consultation_inner {
@@ -205,9 +205,9 @@
 
   .preventivo_form {
     display: flex;
+    flex-direction: column;
     margin: 0;
-    padding: 0 15px;
-    height: 400px;
+    padding: 0 15px 150px;
   }
 }
 /* .consultation_inner {
